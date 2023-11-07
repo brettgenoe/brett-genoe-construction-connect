@@ -2,7 +2,7 @@ import './Footer.scss'
 
 const Footer = () => {
 
-    retun(
+    return (
         <>
             <h2> This app has been developed by Brett Genoe</h2>
 

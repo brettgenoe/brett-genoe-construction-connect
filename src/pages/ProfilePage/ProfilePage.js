@@ -2,7 +2,7 @@ import './ProfilePage.scss'
 
 const ProfilePage = () => {
 
-    retun(
+    return (
         <>
             <section className='profile' ></section>
         </>

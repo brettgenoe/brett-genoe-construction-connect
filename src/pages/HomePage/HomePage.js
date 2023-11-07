@@ -2,7 +2,7 @@ import './HomePage.scss'
 
 const HomePage = () => {
 
-    retun(
+    return (
         <>
             <main className='home' ></main>
         </>
