@@ -24,31 +24,33 @@ const HomePage = () => {
                 <div className='red-dot red-dot--1'></div>
                 <div className='red-dot red-dot--2'></div>
                 <div className='red-dot red-dot--3'></div>
-                <section>
-                    <h2>Your Search Results</h2>
 
-                    <div>
-                        <h3> Example 1 (Company's name)</h3>
-                        <p>companyemail@email.com</p>
-                        <p>company phone#</p>
-                        <h4>Location</h4>
-                        <span> 123 Example St.
-                        </span>
-                        <h4>Duration</h4>
-                        <span>2 years</span>
-                        <h4>Description</h4>
-                        <p>Description of job goes here: we are building an apartment complex near downtown...</p>
 
-                        <h4>Workers Needed:</h4>
-                        <p><b>Carpenters:</b> 3</p>
-                        <p><b>Electricians:</b> 2</p>
-                        <p><b>Plumbers:</b> 1</p>
-                        <p><b>Operators:</b> 1</p>
-                        <p><b>Labours:</b> 7</p>
 
-                    </div>
+                <section className='result' >
+                    <h2 className='result__title'>Your Search Results</h2>
+                    <h3 className='result__title--name'> Example 1 (Company's name)</h3>
+                    <p className='result__email'>companyemail@email.com</p>
+                    <p className='result__phone'>company phone#</p>
+                    <h4 className='result__title--small result__address'>Location</h4>
+                    <span className='result__address--result'> 123 Example St.
+                    </span>
+                    <h4 className='result__title--small result__duration'>Duration</h4>
+                    <span className='result__duration--result'>2 years</span>
+                    <h4 className='result__title--small result__description'>Description</h4>
+                    <p className='result__description--result'>Description of job goes here: we are building an apartment complex near downtown...</p>
+
+                    <h4 className='result__title--small'>Workers Needed:</h4>
+                    <p className='labour'><b>Carpenters:</b> 5</p>
+                    <p className='labour'><b>Electricians:</b> 4</p>
+                    <p className='labour'><b>Plumbers:</b> 2</p>
+                    <p className='labour'><b>Operators:</b> 1</p>
+                    <p className='labour'><b>Safety:</b> 1</p>
+                    <p className='labour'><b>Labours:</b> 7</p>
 
                 </section>
+
+
             </main>
         </>
     )
