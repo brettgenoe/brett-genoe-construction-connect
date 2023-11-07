@@ -1,0 +1,14 @@
+@use "./variables.scss" as *;
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $primary-text-colour;
+}
+
+* {
+    margin: 0%;
+}
