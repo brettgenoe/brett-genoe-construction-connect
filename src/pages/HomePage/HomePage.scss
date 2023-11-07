@@ -3,4 +3,19 @@
 @use "../../styles/partials/reset.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 
+.home {
+    background-color: $secondary-background-colour;
+    padding: 2.5%;
 
+    &__title {
+        text-align: center;
+
+    }
+
+    &__map {
+        width: 100%;
+        height: 90vw;
+        box-sizing: border-box;
+        border: 4px solid $border-colour;
+    }
+}
