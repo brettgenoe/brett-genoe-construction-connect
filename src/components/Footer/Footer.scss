@@ -2,3 +2,14 @@
 @use "../../styles/partials/fonts.scss" as *;
 @use "../../styles/partials/reset.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
+
+
+.footer {
+    height: 6rem;
+    background-color: $primary-background-colour;
+    border-top: 4px solid $hover-colour;
+
+    &__title {
+        font-size: 1.5rem;
+    }
+}

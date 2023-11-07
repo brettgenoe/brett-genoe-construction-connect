@@ -4,8 +4,9 @@ const Footer = () => {
 
     return (
         <>
-            <h2> This app has been developed by Brett Genoe</h2>
-
+            <footer className='footer'>
+                <h2 className='footer__title'> This app has been developed by Brett Genoe</h2>
+            </footer>
         </>
     )
 }
