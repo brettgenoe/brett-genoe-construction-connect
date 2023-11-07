@@ -102,5 +102,19 @@
         }
     }
 
+    &__labour {
+        padding-top: .5rem;
+    }
 
+    &__apply-button {
+        box-sizing: border-box;
+        height: 4rem;
+        width: 6rem;
+        background-color: $primary-colour;
+        border-radius: 2rem;
+        border: 3px solid $hover-colour;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-top: 2rem;
+    }
 }

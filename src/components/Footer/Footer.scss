@@ -5,11 +5,45 @@
 
 
 .footer {
-    height: 6rem;
+    // height: 6rem;
     background-color: $primary-background-colour;
     border-top: 4px solid $hover-colour;
+    padding: (.75rem 2.5% 0rem 2.5%);
+    box-sizing: border-box;
 
     &__title {
-        font-size: 1.5rem;
+        font-size: 1.125rem;
+
+
+        &--contact {
+            font-size: 1.125rem;
+            text-transform: uppercase;
+            margin: (.5rem 0);
+            border-bottom: 2px $hover-colour solid;
+            width: fit-content;
+        }
     }
+
+    &__contact-section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__icons {
+        display: flex;
+        position: relative;
+        top: -1rem;
+
+
+
+        &--linkedin {
+            height: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        &--github {
+            height: 2.5rem;
+        }
+    }
+
 }

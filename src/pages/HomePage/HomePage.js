@@ -20,11 +20,11 @@ const HomePage = () => {
                 </form>
                 <article className='home__map'>
 
-                </article>
-                <div className='red-dot red-dot--1'></div>
-                <div className='red-dot red-dot--2'></div>
-                <div className='red-dot red-dot--3'></div>
 
+                    <div className='red-dot red-dot--1'></div>
+                    <div className='red-dot red-dot--2'></div>
+                    <div className='red-dot red-dot--3'></div>
+                </article>
 
 
                 <section className='result' >
@@ -41,12 +41,14 @@ const HomePage = () => {
                     <p className='result__description--result'>Description of job goes here: we are building an apartment complex near downtown...</p>
 
                     <h4 className='result__title--small'>Workers Needed:</h4>
-                    <p className='labour'><b>Carpenters:</b> 5</p>
-                    <p className='labour'><b>Electricians:</b> 4</p>
-                    <p className='labour'><b>Plumbers:</b> 2</p>
-                    <p className='labour'><b>Operators:</b> 1</p>
-                    <p className='labour'><b>Safety:</b> 1</p>
-                    <p className='labour'><b>Labours:</b> 7</p>
+                    <p className='result__labour'><b>Carpenters:</b> 5</p>
+                    <p className='result__labour'><b>Electricians:</b> 4</p>
+                    <p className='result__labour'><b>Plumbers:</b> 2</p>
+                    <p className='result__labour'><b>Operators:</b> 1</p>
+                    <p className='result__labour'><b>Safety:</b> 1</p>
+                    <p className='result__labour'><b>Labours:</b> 7</p>
+
+                    <a className='result__apply-button'>Apply</a>
 
                 </section>
 
