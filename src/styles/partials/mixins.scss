@@ -1,4 +1,5 @@
 @use "./variables.scss" as *;
+@use "./fonts.scss" as *;
 
 @mixin tablet {
     @media (min-width: $tablet-breakpoint) {
@@ -9,5 +10,97 @@
 @mixin desktop {
     @media (min-width: $desktop-breakpoint) {
         @content;
+    }
+}
+
+@mixin page-header {
+    color: $primary-text;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    font-family: $text-family;
+    font-weight: $text-bold;
+
+    @include tablet {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+}
+
+@mixin subheader {
+    color: $primary-text;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-family: $text-family;
+    font-weight: $text-bold;
+
+    @include tablet {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}
+
+@mixin label-links-buttons {
+    color: $primary-text;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    font-family: $text-family;
+    font-weight: $text-bold;
+
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+}
+
+@mixin table-header {
+    color: $secondary-text;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    font-family: $text-family;
+    font-weight: $text-bold;
+    text-transform: uppercase;
+
+    @include tablet {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+    }
+}
+
+@mixin body-large {
+    color: $primary-text;
+    font-size: 0.9375rem;
+    line-height: 1.625rem;
+    font-family: $text-family;
+    font-weight: $text-regular;
+
+    @include tablet {
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+}
+
+@mixin body-medium {
+    color: $primary-text;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    font-family: $text-family;
+    font-weight: $text-regular;
+
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+}
+
+@mixin body-small {
+    color: $primary-text;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    font-family: $text-family;
+    font-weight: $text-regular;
+
+    @include tablet {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
     }
 }
