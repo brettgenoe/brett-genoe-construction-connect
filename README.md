@@ -1,5 +1,6 @@
 # Project Title
 Construction Connect
+
 ## Overview
 My app is a platform for construction employers and employees to connect, allowing a steamlined process for hiring. 
 
@@ -9,23 +10,21 @@ This stems from my experience in the construction industry, where I worked along
 
 ### User Profile
 
-Primarily there will be two types of users/profiles. One for employees who are able to post jobs, and one for potential employees, who can get in contact with employers. 
-
+Primarily there will be two types of users/profiles. One for employees who are able to post jobs, and one for potential employees, who can get in contact with employers and see the potential listings. 
 
 ### Features
 
 The main features for an employers standpoint would be the ability to post jobs, including the location to be placed on a map. The employeers would be able to search, depending on location, and potentially update their resume online to send directly to employer. 
 
-
 ## Implementation
 
 ### Tech Stack
 
-In this capstone, I will use: HTML, CSS, Sass, JavaScript, React, Node.js, Express, Axios, mySQL, GitHub and I'm sure more to come. 
+In this capstone, I will use: HTML, CSS, Sass, JavaScript, React, Node.js, Express, Axios, mySQL, GitHub. I'm sure I will use more and add as they come. 
 
 ### APIs
 
-My main API will be a mapping API which I will get from the Google Maps API.
+My main API will be a mapping API which I will get from the Google Maps API. I will use Mapbox as a backup
 
 ### Sitemap
 
@@ -33,7 +32,8 @@ There will be a entrance page, with login features, seperating employers to empl
 
 ### Mockups
 
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
+![Employer mockup on paper]
+(./src/assets/proposalAssets/employerOutline.jpg)
 
 ### Data
 
@@ -63,7 +63,9 @@ Step five - create add job function. 2 days
 Step six * (to be determined if time is going well) - add user authentication to users. 2-3 days. 
 Step seven - if all good, add styling, media queries, font, functionalities, etc. for remainder of last sprint. 3-4 days
 
-(I'm starting on the 13th of November, which would give me essentially 17-18 days of work.)
+(I'm starting on the 13th of November, which would give me essentially ~13-14 days of work.)
+
+
 
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
 
@@ -73,6 +75,6 @@ Nice to haves will list in importance:
 ~ User authentication
 ~ a search querie to be able to look for jobs from a certain distance
 ~ uploading resume
-~ more detailed profile pages to include website details, etc. 
+~ more detailed profile pages to include website details, etc.  
 
 Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
