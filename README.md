@@ -54,6 +54,9 @@ The project should and will use login and user profile functionality, especially
 Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
 
 ## Roadmap
+Please see attached Gantt Chart:
+(ConstructionConnect.pdf)
+
 
 Step one - build frontend skeleton and a pseudo design so I can figure out the essential data needed. 1-2 days
 Step two - build backend skeleton, connect Google Map API into backend and frontend to make sure is functional. 1-2 days
