@@ -32,8 +32,7 @@ There will be a entrance page, with login features, seperating employers to empl
 
 ### Mockups
 
-![Employer mockup on paper]
-(./src/assets/proposalAssets/employerOutline.jpg)
+![Employer mockup on paper]("./src/assets/proposalAssets/employerOutline.jpg")
 
 ### Data
 
@@ -55,7 +54,7 @@ Does your project include any login or user profile functionality? If so, descri
 
 ## Roadmap
 Please see attached Gantt Chart:
-(ConstructionConnect.pdf)
+![GanntChart]("./src/assets/proposalAssets/ConstuctionConnect-Sprint1GanttChart-Nov13.pdf")
 
 
 Step one - build frontend skeleton and a pseudo design so I can figure out the essential data needed. 1-2 days
