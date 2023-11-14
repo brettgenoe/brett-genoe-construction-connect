@@ -15,15 +15,17 @@
 
 @mixin page-header {
     color: $primary-text;
-    font-size: 1.75rem;
+    font-size: 2rem;
     line-height: 2.25rem;
     font-family: $text-family;
     font-weight: $text-bold;
 
     @include tablet {
-        font-size: 2rem;
+        font-size: 2.5rem;
         line-height: 2.5rem;
     }
+
+    @content;
 }
 
 @mixin subheader {
@@ -37,6 +39,8 @@
         font-size: 1.5rem;
         line-height: 2rem;
     }
+
+    @content;
 }
 
 @mixin label-links-buttons {
@@ -50,6 +54,8 @@
         font-size: 0.875rem;
         line-height: 1.375rem;
     }
+
+    @content;
 }
 
 @mixin table-header {
@@ -64,6 +70,8 @@
         font-size: 0.75rem;
         line-height: 1.125rem;
     }
+
+    @content;
 }
 
 @mixin body-large {
@@ -77,6 +85,8 @@
         font-size: 1rem;
         line-height: 1.75rem;
     }
+
+    @content;
 }
 
 @mixin body-medium {
@@ -90,6 +100,8 @@
         font-size: 0.875rem;
         line-height: 1.375rem;
     }
+
+    @content;
 }
 
 @mixin body-small {
@@ -103,4 +115,6 @@
         font-size: 0.75rem;
         line-height: 1.125rem;
     }
+
+    @content;
 }

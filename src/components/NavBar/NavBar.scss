@@ -8,6 +8,7 @@
 
     &__section {
         height: 7.5rem;
+        box-sizing: border-box;
         width: 100%;
         background-color: $primary-background-colour;
         box-sizing: border-box;
@@ -42,7 +43,7 @@
         font-size: 1rem;
         font-weight: 500;
         text-transform: uppercase;
-        color: $primary-text-colour;
+        color: $primary-text;
 
         &:hover {
             background-color: $hover-colour;
@@ -55,11 +56,12 @@
     }
 
     &__title {
-        color: $primary-text-colour;
-        position: relative;
+        @include page-header;
+        box-sizing: border-box;
         text-align: center;
-        font-size: 2.30rem;
-        font-weight: 900;
-        top: -0.45rem;
+
+        @include tablet {
+            padding-bottom: 2rem;
+        }
     }
 }
