@@ -58,45 +58,43 @@ My main API will be a mapping API which I will get from the Google Maps API. I w
 <div>
 
 ### Sitemap
+<p><i>List the pages of your app with brief descriptions. You can show this visually, or write it out.</i></p>
 
-<p><i>
-There will be a entrance page, with login features, seperating employers to employees. There will be essentially two homepages, depending on which of the two types of profiles you fit under. </i></p>
+
+<p>There will be a entrance page, with login features, seperating employers to employees. There will be essentially two homepages, depending on which of the two types of profiles you fit under.</p>
 </div>
 <div>
 
 ### Mockups
 <p><i>List the pages of your app with brief descriptions. You can show this visually, or write it out.</i></p>
-<p><b>This is a example sketch of a mockup for an employer page and its functionality</b></p>
+<h3><b>This is a example sketch of a mockup for an employer page and its functionality</b></h3>
 
 <div>
-<img
+ <img
 src="./public/proposalAssets/employerOutline.jpg"
 alt="Employer mockup on paper"
 width="60%">
 
-<p><b>This is a example sketch of a mockup for an employee page and its functionality</b></p>
+<h3><b>This is a example sketch of a mockup for an employee page and its functionality</b></h3>
 <img
 src="./public/proposalAssets/employeeOutline.jpg"
 alt="Employer mockup on paper"
 width="60%">
 </div>
-<!-- ![Employee mockup on paper](public/proposalAssets/employerOutline.jpg) -->
-<!-- ![Example of first mockut](public/proposalAssets/example.png) -->
+
 <div>
-<p><b>This is a example of a mockup on mobile view</b></p>
+<h3><b>This is a example of a mockup on mobile view</b></h3>
 <img
-src="./public/proposalAssets/example.jpg"
+src="./public/proposalAssets/example.png"
 alt="Employer mockup on paper"
 width="100%">
 </div>
-</div>
-
 </div>
 <div>
 
 ### Data
 
-<p><i>Describe your data and the relationships between them. You can show this visually using diagrams, or write it out. </i</p>>
+<p><i>Describe your data and the relationships between them. You can show this visually using diagrams, or write it out. </i></p>
 <p>
 My Data has two sets, users/profile data, which shows name, email, passwords, type of client, etc. and job data, which would show location, length and how many workers they need. 
 </p>
@@ -126,7 +124,6 @@ The project should and will use login and user profile functionality, especially
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.</i></p>
 <p>
 Please see attached <a href="./public/proposalAssets/ConstuctionConnect-Sprint1GanttChart-Nov13.pdf">Gantt Chart:</a>
-<!-- ![GanntChart](public/proposalAssets/ConstuctionConnect-Sprint1GanttChart-Nov13.pdf) -->
 </p>
 <ul>
 <li>
@@ -159,6 +156,7 @@ Nice to haves will list in importance:
 User authentication </li>
 <li> A search querie to be able to look for jobs from a certain distance </li>
 <li> Uploading resume </li>
+<li>A job scrapper from sites like Indeed and kijiji</li>
 <li> More detailed profile pages to include website details, etc. </li>
 </p>
 </div>
