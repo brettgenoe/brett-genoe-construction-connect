@@ -3,7 +3,7 @@
 
 ## Overview
 <p><i>What is your app? Brief description in a couple of sentences.</i></p>
-<p>My app is a platform for construction employers and employees to connect, allowing a steamlined process for hiring.</p>
+<p>My app is a platform for construction employers and employees to connect. Employers can create profiles and post jobs, allowing future employees to see and respond to the add. Future Employees can search jobs by location and qualifications, allowing a steamlined process for hiring.</p>
 </div>
 <div>
 
@@ -87,7 +87,7 @@ width="60%">
 <img
 src="./public/proposalAssets/example.png"
 alt="Employer mockup on paper"
-width="100%">
+width="60%">
 </div>
 </div>
 <div>
