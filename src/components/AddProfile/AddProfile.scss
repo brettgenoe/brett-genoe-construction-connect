@@ -32,20 +32,11 @@
         &-left {
             display: flex;
             flex-direction: column;
-
-
-            @include tablet {
-                border-right: 2px solid $hover-colour;
-            }
         }
 
         &-right {
             display: flex;
             flex-direction: column;
-
-            @include tablet {
-                border-left: 2px solid $hover-colour;
-            }
         }
 
         &-header {

@@ -61,7 +61,7 @@ My main API will be a mapping API which I will get from the Google Maps API. I w
 <p><i>List the pages of your app with brief descriptions. You can show this visually, or write it out.</i></p>
 
 
-<p>There will be a entrance page, with login features, seperating employers to employees. There will be essentially two homepages, depending on which of the two types of profiles you fit under.</p>
+<p>There will be a entrance page, with login features, seperating employers to employees. There will be essentially two homepages, depending on which of the two types of profiles you fit under, or what might be better is a single homepage, with the post button what is only accessible as a employer. </p>
 </div>
 <div>
 
