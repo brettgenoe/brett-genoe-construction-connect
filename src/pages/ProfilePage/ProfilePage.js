@@ -1,5 +1,5 @@
 import ProfileComponent from '../../components/ProfileComponent/ProfileComponent';
-import ProfileHeader from '../../components/ProfileHeader/ProfileHeader';
+import ProfileHead from '../../components/ProfileHead/ProfileHead';
 import './ProfilePage.scss'
 
 const ProfilePage = () => {
@@ -7,7 +7,7 @@ const ProfilePage = () => {
     return (
         <>
             <section className='profile-page__container' >
-                <ProfileHeader />
+                <ProfileHead />
                 <ProfileComponent />
             </section>
         </>
