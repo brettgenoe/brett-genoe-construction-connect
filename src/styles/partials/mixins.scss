@@ -49,6 +49,7 @@
     line-height: 1.25rem;
     font-family: $text-family;
     font-weight: $text-bold;
+    text-transform: uppercase;
 
     @include tablet {
         font-size: 0.875rem;
@@ -117,4 +118,36 @@
     }
 
     @content;
+}
+
+@mixin input-field {
+    border: 0.1875rem solid $hover-colour;
+    border-radius: 2rem;
+    padding: (0.5rem 0 .5rem .5rem);
+
+    @content
+}
+
+@mixin button {
+    padding: (0.25rem);
+    min-width: 6rem;
+    background-color: $primary-colour ;
+    border: 3px solid $hover-colour;
+    border-radius: 2.5rem;
+
+    @include label-links-buttons {
+        font-size: 1.125rem
+    }
+
+    ;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: $hover-colour;
+        color: $primary-colour;
+        border: 3px solid $primary-colour;
+        cursor: pointer;
+    }
+
+    @content
 }

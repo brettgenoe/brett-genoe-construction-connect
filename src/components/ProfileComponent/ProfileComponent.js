@@ -4,7 +4,9 @@ const ProfileComponent = () => {
 
     return (
         <>
-            <section className='profile' ></section>
+            <section className='profile' >
+                This is the profile component
+            </section>
         </>
     )
 }

@@ -1,3 +1,5 @@
+import React from 'react';
+import AddProfile from '../../components/AddProfile/AddProfile';
 import ProfileComponent from '../../components/ProfileComponent/ProfileComponent';
 import ProfileHead from '../../components/ProfileHead/ProfileHead';
 import './ProfilePage.scss'
@@ -6,10 +8,11 @@ const ProfilePage = () => {
 
     return (
         <>
-            <section className='profile-page__container' >
+            <main className='profile-page__container' >
                 <ProfileHead />
                 <ProfileComponent />
-            </section>
+                <AddProfile />
+            </main>
         </>
     )
 }

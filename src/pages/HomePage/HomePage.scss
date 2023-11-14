@@ -51,6 +51,10 @@
             flex-direction: row-reverse;
         }
     }
+
+    &__post-button {
+        @include button;
+    }
 }
 
 .red-dot {
@@ -148,6 +152,7 @@
         box-sizing: border-box;
         margin-top: 1rem;
     }
+
 
 
     &__apply-button {

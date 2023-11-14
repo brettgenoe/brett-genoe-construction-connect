@@ -1,6 +1,6 @@
 import React from "react";
-import "./AddProfile.scss"
-const AddProfile = () => {
+import "./AddPost.scss"
+const AddPost = () => {
 
     return (
         <section className="add-new">
@@ -10,35 +10,35 @@ const AddProfile = () => {
                     <div className="add-new__form--container">
                         <div className="add-new__form-left">
                             <label
-                                id="username"
+                                id="companyname"
                                 className="add-new__form-header">
-                                Username:
+                                Companyname:
                             </label>
                             <input
-                                id="username"
+                                id="companyname"
                                 className="add-new__form-input"
-                                placeholder="Username"
+                                placeholder="Company Name"
                             />
                             <label
-                                id="password"
+                                id="location"
                                 className="add-new__form-header">
-                                Password:
+                                Location:
                             </label>
                             <input
-                                id="password"
+                                id="location"
                                 className="add-new__form-input"
-                                placeholder="Password goes here"
+                                placeholder="Location goes here"
                             />
                             <label
-                                id="confirmPassword"
+                                id="duration"
                                 className="add-new__form-header"
                             >
-                                Confirm Password:
+                                Duration:
                             </label>
                             <input
-                                id="confirmPassword"
+                                id="duration"
                                 className="add-new__form-input"
-                                placeholder="Confirm Password"
+                                placeholder="Duration of project"
                             />
                             <label
                                 id="email"
@@ -50,51 +50,69 @@ const AddProfile = () => {
                                 className="add-new__form-input"
                                 placeholder="Email"
                             />
-
                         </div>
                         <div className="add-new__form-right">
 
                             <label
-                                id="address"
+                                id="carpenters"
                                 className="add-new__form-header">
-                                Address:
+                                Carpenters:
                             </label>
                             <input
-                                id="address"
+                                id="carpenters"
                                 className="add-new__form-input"
-                                placeholder="Address"
+                                placeholder="# of Carpenters Needed"
                             />
                             <label
-                                id="city"
+                                id="electricians"
 
                                 className="add-new__form-header">
-                                city:
+                                Electricians:
                             </label>
                             <input
-                                id="city"
+                                id="electricians"
                                 className="add-new__form-input"
-                                placeholder="City"
+                                placeholder="# of Electricians Needed"
                             />
                             <label
-                                id="province"
+                                id="plumbers"
                                 className="add-new__form-header">
-                                Province:
+                                Plumbers:
                             </label>
                             <input
-                                id="province"
+                                id="plumbers"
                                 className="add-new__form-input"
-                                placeholder="Province"
+                                placeholder="# of Plumbers Needed"
                             />
 
                             <label
-                                id="trade"
+                                id="operators"
                                 className="add-new__form-header">
-                                Trade:
+                                Operators:
                             </label>
                             <input className="add-new__form-input"
-                                id="trade"
-                                placeholder="Trade"
+                                id="operators"
+                                placeholder="# of Operators Needed"
                             />
+                            <label
+                                id="safety"
+                                className="add-new__form-header">
+                                Safety:
+                            </label>
+                            <input className="add-new__form-input"
+                                id="safety"
+                                placeholder="# of Safety Needed"
+                            />
+                            <label
+                                id="labours"
+                                className="add-new__form-header">
+                                Operators:
+                            </label>
+                            <input className="add-new__form-input"
+                                id="labours"
+                                placeholder="# of Labours Needed"
+                            />
+
                         </div>
                     </div>
 
@@ -113,4 +131,4 @@ const AddProfile = () => {
     )
 
 }
-export default AddProfile
+export default AddPost
