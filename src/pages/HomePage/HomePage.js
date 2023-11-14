@@ -1,5 +1,6 @@
 import './HomePage.scss'
 import search from "../../assets/icons/search.svg"
+import { NavLink } from 'react-router-dom';
 
 
 const HomePage = () => {
@@ -11,6 +12,7 @@ const HomePage = () => {
                 <div className='home__media-queries'>
                     <section className='home__search--map'>
                         <h2 className='home__title--search'>Login to Search!</h2>
+                        <NavLink to={"./post"}><button className='home__post-button'>Let's Make a New Post!</button></NavLink>
                         <form className='search'>
                             <label className='search__label'>
                             </label>
@@ -21,8 +23,6 @@ const HomePage = () => {
                             <button className='search__button'></button>
                         </form>
                         <article className='home__map'>
-
-
                             <div className='red-dot red-dot--1'></div>
                             <div className='red-dot red-dot--2'></div>
                             <div className='red-dot red-dot--3'></div>
