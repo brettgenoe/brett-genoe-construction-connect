@@ -35,24 +35,7 @@
     }
 
     &__button {
-        height: 2rem;
-        width: 6rem;
-        background-color: $primary-colour ;
-        border: 3px solid $hover-colour;
-        border-radius: 2.5rem;
-        font-size: 1rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        color: $primary-text;
-
-        &:hover {
-            background-color: $hover-colour;
-            color: $primary-colour;
-            border: 3px solid $primary-colour;
-            cursor: pointer;
-        }
-
-
+        @include button;
     }
 
     &__title {

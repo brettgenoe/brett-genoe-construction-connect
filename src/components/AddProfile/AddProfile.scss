@@ -1,0 +1,55 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
+.add-new {
+
+    &__container {
+        box-sizing: border-box;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    &__form {
+
+        &--container {
+
+            @include tablet {
+                display: flex;
+            }
+        }
+
+        &-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-right {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-header {
+            @include label-links-buttons;
+            padding: (1.5rem 0 0.25rem 0);
+        }
+
+        &-input {
+            @include input-field
+        }
+
+        &-button {
+            @include button {
+                width: 100%;
+                margin: (1.5rem 0);
+            }
+        }
+
+    }
+
+
+
+
+
+}
