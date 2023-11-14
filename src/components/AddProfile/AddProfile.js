@@ -40,8 +40,6 @@ const AddProfile = () => {
                                 className="add-new__form-input"
                                 placeholder="Confirm Password"
                             />
-                        </div>
-                        <div className="add-new__form-right">
                             <label
                                 id="email"
                                 className="add-new__form-header">
@@ -52,6 +50,9 @@ const AddProfile = () => {
                                 className="add-new__form-input"
                                 placeholder="Email"
                             />
+
+                        </div>
+                        <div className="add-new__form-right">
 
                             <label
                                 id="address"

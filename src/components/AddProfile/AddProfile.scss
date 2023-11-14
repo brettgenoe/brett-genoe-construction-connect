@@ -4,11 +4,19 @@
 
 
 .add-new {
+    display: flex;
+    flex-direction: column;
+
 
     &__container {
         box-sizing: border-box;
-        max-width: 90%;
-        margin: 0 auto;
+        max-width: 100%;
+        margin: 0 5%;
+
+        @include desktop {
+            margin: 0 2.5%;
+        }
+
     }
 
     &__form {
@@ -17,17 +25,27 @@
 
             @include tablet {
                 display: flex;
+                justify-content: space-between;
             }
         }
 
         &-left {
             display: flex;
             flex-direction: column;
+
+
+            @include tablet {
+                border-right: 2px solid $hover-colour;
+            }
         }
 
         &-right {
             display: flex;
             flex-direction: column;
+
+            @include tablet {
+                border-left: 2px solid $hover-colour;
+            }
         }
 
         &-header {
@@ -36,13 +54,27 @@
         }
 
         &-input {
-            @include input-field
+            @include input-field;
+
+
+            @include tablet {
+                min-width: 40vw;
+            }
+
+            @include desktop {
+                min-width: 45vw
+            }
         }
 
         &-button {
             @include button {
                 width: 100%;
-                margin: (1.5rem 0);
+                margin: (2rem 0);
+
+                @include tablet {
+                    width: 20%;
+                    margin-left: 80%;
+                }
             }
         }
 

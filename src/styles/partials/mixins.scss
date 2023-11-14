@@ -123,7 +123,7 @@
 @mixin input-field {
     border: .125rem solid $hover-colour;
     border-radius: 2rem;
-    padding: (0.25rem 0 .25rem .5rem);
+    padding: (0.35rem 0 .35rem .5rem);
 
     @content
 }
