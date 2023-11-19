@@ -1,0 +1,149 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "company_name": "Bluth Industries",
+                "location": "Vancouver",
+                "duration": 30,
+                "description": "Building model homes for a new development.",
+                "manager_id": 4,
+                "carpenters_needed": 5,
+                "electricians_needed": 3,
+                "plumbers_needed": 2,
+                "operators_needed": 4,
+                "safety_needed": 1,
+                "email": "michael.bluth@example.com",
+                "telephone": "555-1234"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -123.1216,
+                    49.2827
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "company_name": "Bluth Industries",
+                "location": "Vancouver",
+                "duration": 45,
+                "description": "Renovating commercial properties.",
+                "manager_id": 4,
+                "carpenters_needed": 8,
+                "electricians_needed": 5,
+                "plumbers_needed": 3,
+                "operators_needed": 6,
+                "safety_needed": 2,
+                "email": "michael.bluth@example.com",
+                "telephone": "555-1234"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -123.129,
+                    49.2844
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "company_name": "Sitwell Real Estate",
+                "location": "Vancouver",
+                "duration": 40,
+                "description": "Building student apartments.",
+                "manager_id": 9,
+                "carpenters_needed": 6,
+                "electricians_needed": 4,
+                "plumbers_needed": 3,
+                "operators_needed": 5,
+                "safety_needed": 2,
+                "email": "sally.sitwell@example.com",
+                "telephone": "555-5678"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -123.234799,
+                    49.260355
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "company_name": "Sitwell Real Estate",
+                "location": "Vancouver",
+                "duration": 35,
+                "description": "Renovating historic buildings, while thinking of the contemporary family in mind.",
+                "manager_id": 9,
+                "carpenters_needed": 7,
+                "electricians_needed": 3,
+                "plumbers_needed": 2,
+                "operators_needed": 4,
+                "safety_needed": 1,
+                "email": "sally.sitwell@example.com",
+                "telephone": "555-5678"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -123.0,
+                    49.200355
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "company_name": "Kitty Construction",
+                "location": "Vancouver",
+                "duration": 50,
+                "description": "Renovating YVR restaurants with a modern flair.",
+                "manager_id": 10,
+                "carpenters_needed": 10,
+                "electricians_needed": 6,
+                "plumbers_needed": 4,
+                "operators_needed": 8,
+                "safety_needed": 3,
+                "email": "kitty.konstruction@example.com",
+                "telephone": "555-9900"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -123.2,
+                    49.2
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "company_name": "Kitty Construction",
+                "location": "Vancouver",
+                "duration": 25,
+                "description": "Contructing a riverside apratment complex",
+                "manager_id": 10,
+                "carpenters_needed": 5,
+                "electricians_needed": 4,
+                "plumbers_needed": 2,
+                "operators_needed": 3,
+                "safety_needed": 1,
+                "email": "kitty.konstruction@example.com",
+                "telephone": "555-9900"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -123.093,
+                    49.13
+                ]
+            }
+        }
+    ]
+}

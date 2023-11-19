@@ -15,12 +15,12 @@ const NavBar = () => {
                         alt='blueprint logo of the app'
                     /></NavLink>
                     <div className='nav__log-in' >
-                        <NavLink to="/profile" >
+                        <NavLink to="/" >
                             <button
                                 className='nav__button'
                             >Log In</button>
                         </NavLink>
-                        <NavLink to="/profile" >
+                        <NavLink to="/signup" >
                             <button
                                 className='nav__button'
                             >Sign Up</button>

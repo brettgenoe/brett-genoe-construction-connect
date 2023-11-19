@@ -1,6 +1,7 @@
 import './HomePage.scss'
 import search from "../../assets/icons/search.svg"
 import { NavLink } from 'react-router-dom';
+import Mapbox from '../../components/Mapbox/Mapbox';
 
 
 const HomePage = () => {
@@ -17,19 +18,19 @@ const HomePage = () => {
                             <label className='search__label'>
                             </label>
                             <input
+                                type='search'
                                 className='search__input'
                                 placeholder='Search your neighbourhood'>
                             </input>
-                            <button className='search__button'></button>
+                            <button type="search"
+                                className='search__button'></button>
                         </form>
-                        <article className='home__map'>
-                            <div className='red-dot red-dot--1'></div>
-                            <div className='red-dot red-dot--2'></div>
-                            <div className='red-dot red-dot--3'></div>
+                        <article className='home__map--conatiner'>
+                            <Mapbox />
                         </article> </section>
 
 
-                    <section className='result' >
+                    {/* <section className='result' >
                         <h2 className='result__title'>Your Search Results:</h2>
                         <h3 className='result__title--name'> Example 1 (Company's name)</h3>
                         <p className='result__email'>companyemail@email.com</p>
@@ -52,7 +53,7 @@ const HomePage = () => {
                         </div>
                         <div className='result__button--container'><a className='result__apply-button'>Apply</a></div>
 
-                    </section>
+                    </section> */}
                 </div>
 
 

@@ -41,14 +41,14 @@ const AddPost = () => {
                                 placeholder="Duration of project"
                             />
                             <label
-                                id="email"
+                                id="description"
                                 className="add-new__form-header">
-                                Email:
+                                Description:
                             </label>
                             <input
-                                id="email"
+                                id="description"
                                 className="add-new__form-input"
-                                placeholder="Email"
+                                placeholder="description"
                             />
                         </div>
                         <div className="add-new__form-right">

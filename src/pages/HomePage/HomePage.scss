@@ -6,7 +6,7 @@
 
 .home {
     background-color: rgba(255, 254, 254, 0.89);
-    padding: 2.5%;
+    padding: 5%;
     box-sizing: border-box;
 
     &__title {
@@ -21,15 +21,17 @@
         }
     }
 
-    &__map {
-        width: 90vw;
-        height: 90vw;
-        box-sizing: border-box;
+    &__map--containers {
         position: relative;
-        border: 3px solid $border-colour;
-        border-radius: 2rem;
-        background: url("../../assets/images/stockmap.jpeg");
-        background-size: contain;
+        // width: 90vw;
+        // height: 90vw;
+
+        // box-sizing: border-box;
+        // position: relative;
+        // border: 3px solid $border-colour;
+        // border-radius: 2rem;
+        // background: url("../../assets/images/stockmap.jpeg");
+        // background-size: contain;
 
         @include tablet {
             width: 80%;
