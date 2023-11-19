@@ -1,0 +1,46 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/reset.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
+.popup {
+
+    &__container {
+        position: absolute;
+        height: fit-content;
+        top: 1rem;
+        left: 0rem;
+
+    }
+
+    &__company-name {
+        @include page-header;
+        padding-bottom: .5rem
+    }
+
+    &__address {
+        @include subheader;
+        font-size: 1.5rem
+    }
+
+    &__description {
+        @include body-large;
+        font-size: 1.2rem
+    }
+
+    &__duration {
+        @include subheader;
+        padding-bottom: .5rem;
+    }
+
+    &__header {
+        @include label-links-buttons;
+        font-size: 1.25rem;
+    }
+
+    &__trade {
+        @include body-large;
+    }
+
+}

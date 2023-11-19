@@ -1,0 +1,66 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/reset.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
+
+.map-section {
+    position: relative;
+    // box-sizing: border-box;
+    height: 100%;
+    margin-bottom: 4rem;
+    width: 100%;
+    // border: 3px solid $hover-colour;
+    z-index: 4;
+
+    @include tablet {
+        height: 70vw;
+        width: 55vw;
+    }
+}
+
+.map-container {
+    min-height: 90vw;
+    max-height: 90vw;
+    width: 100%;
+    position: relative;
+    // border-radius: 3rem;
+    border: 3px solid $hover-colour;
+    box-sizing: border-box;
+
+    @include tablet {
+        max-height: 70vw;
+        max-width: 55vw;
+    }
+}
+
+.sidebar {
+    background-color: $primary-colour;
+    color: $primary-background-colour;
+    padding: .375rem .75rem;
+    font-family: monospace;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0.75rem;
+    border-radius: 0.25rem;
+}
+
+.popup {
+    &__section {
+        height: 50rem;
+
+        &--container {
+            position: relative;
+        }
+    }
+
+    &__title {
+        @include page-header;
+        width: fit-content;
+        border-bottom: .25rem solid $hover-colour;
+    }
+
+}
