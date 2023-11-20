@@ -1,6 +1,6 @@
 # Construction Connect
 <div>
-
+<p> please see backend at <a href="https://github.com/brettgenoe/brett-genoe-construction-connect-backend">brett-genoe-construction-connect-backend</a> </p>
 ## Overview
 <p><i>What is your app? Brief description in a couple of sentences.</i></p>
 <p>My app is a platform for construction employers and employees to connect. Employers can create profiles and post jobs, allowing future employees to see and respond to the add. Future Employees can search jobs by location and qualifications, allowing a steamlined process for hiring.</p>
