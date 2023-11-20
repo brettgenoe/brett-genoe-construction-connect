@@ -15,7 +15,7 @@ const MapPopup = ({ feature }) => {
             <h3 className="popup__company-name">{feature.properties.company_name}</h3>
             <p className='popup__address'>Address, City, Province</p>
             <p className='popup__description'>{feature.properties.description}</p>
-            <p className='popup__duration'> Minimum:  {feature.properties.duration} days of work</p>
+            <p className='popup__duration'> Minimum:  {feature.properties.duration} months of work</p>
             <h3 className='popup__header'> Trades Needed</h3>
             <p className='popup__trade'><b>Carpenters Needed: </b>{feature.properties.carpenters_needed}</p>
             <p className='popup__trade'><b>Electricians Needed: </b>{feature.properties.electricians_needed}</p>
