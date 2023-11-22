@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
+import { AuthProvider } from "./components/AuthContext/AuthContext";
 import HomePage from "./pages/HomePage/HomePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import NavBar from "./components/NavBar/NavBar";
@@ -9,46 +10,51 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import axios from "axios";
 import './App.scss';
 
-const AuthContext = createContext();
+// const AuthContext = createContext();
 
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+// export const useAuth = () => {
+//   return useContext(AuthContext);
+// };
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
+  // const [loggedIn, setLoggedIn] = useState(false);
+  // const [currentUser, setCurrentUser] = useState(null);
 
-  const logIn = async () => {
-    try {
-      console.log("kenny loggins");
-      const response = await axios.get('/api/users/current');
-      if (response.data) {
-        const userData = response.data;
-        setLoggedIn(true);
-        setCurrentUser(userData);
-      } else {
-        console.error("log in error: No user data in the response");
-      }
-    } catch (error) {
-      console.error("log in error", error);
-    }
-  };
+  // const logIn = async () => {
+  //   console.log("atttempting to kenny loggins");
+  //   try {
 
-  const logOut = () => {
-    console.log("loggins out");
-    sessionStorage.removeItem("token");
-    setLoggedIn(false);
-  };
+  //     const response = await axios.get('/api/users/current');
+  //     console.log(response)
+  //     if (response.data) {
+  //       const userData = response.data;
+  //       setLoggedIn(true);
+  //       setCurrentUser(userData);
+  //       console.log("kenny loggins");
+  //     } else {
+  //       console.error("log in error: No user data in the response");
+  //     }
+  //   } catch (error) {
+  //     console.error("log in error", error.message);
+  //   }
+  // };
 
-  const AuthValue = {
-    loggedIn,
-    logIn,
-    logOut
-  };
+  // const logOut = () => {
+  //   console.log("loggins out");
+  //   sessionStorage.removeItem("token");
+  //   setLoggedIn(false);
+  // };
+
+  // const AuthValue = {
+  //   loggedIn,
+  //   logIn,
+  //   logOut
+  // };
+  // console.log('App - AuthValue:', AuthValue);
+
   return (
     <>
-      <AuthContext.Provider value={AuthValue}>
+      <AuthProvider>
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -59,7 +65,7 @@ function App() {
           </Routes>
           <Footer />
         </BrowserRouter>
-      </AuthContext.Provider>
+      </AuthProvider>
     </>
   );
 }

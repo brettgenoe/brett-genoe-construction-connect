@@ -26,7 +26,7 @@ const Mapbox = () => {
 
                 const response = await axios.get("http://localhost:8080/api/projects");
                 const projects = response.data;
-                console.log(response.data)
+                // console.log(response.data)
 
 
                 const newGeojsonData = {
