@@ -7,11 +7,13 @@
 .popup {
 
     &__container {
-        position: absolute;
-        height: fit-content;
+        position: relative;
+        min-height: min-content;
+        box-sizing: border-box;
+        // background-color: lightgray;
+        // height: 70vh;
         top: 1rem;
         left: 0rem;
-
     }
 
     &__company-name {
@@ -26,7 +28,8 @@
 
     &__description {
         @include body-large;
-        font-size: 1.2rem
+        font-size: 1.25rem;
+        line-height: 1.5;
     }
 
     &__duration {
@@ -41,6 +44,20 @@
 
     &__trade {
         @include body-large;
+    }
+
+    &__email {
+        @include label-links-buttons;
+    }
+
+    &__phone {
+        @include label-links-buttons;
+    }
+
+    &__link {
+        text-decoration: underline;
+        text-decoration-color: $hover-colour ;
+        text-decoration-thickness: 2px;
     }
 
 }

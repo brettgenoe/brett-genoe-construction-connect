@@ -59,31 +59,6 @@
     }
 }
 
-.red-dot {
-    height: .75rem;
-    width: .75rem;
-    border-radius: 50%;
-    background-color: red;
-    position: absolute;
-
-
-    &--1 {
-        top: 40%;
-        left: 40%;
-    }
-
-    &--2 {
-        top: 70%;
-        left: 30%;
-    }
-
-    &--3 {
-        top: 60%;
-        left: 80%;
-    }
-
-}
-
 .search {
     height: 3rem;
     display: flex;
@@ -121,49 +96,40 @@
     }
 }
 
-.result {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    box-sizing: border-box;
+// .result {
+//     margin-top: 1rem;
+//     margin-bottom: 2rem;
+//     box-sizing: border-box;
+//     @include tablet {
+//         width: 40%;
+//     }
 
+//     &__title {
+//         text-transform: uppercase;
+//         max-width: fit-content;
+//         border-bottom: 2px solid $hover-colour;
+//         &--name {
+//             font-size: 1.5rem;
+//         }
 
-    @include tablet {
-        width: 40%;
-    }
-
-    &__title {
-        text-transform: uppercase;
-        max-width: fit-content;
-        border-bottom: 2px solid $hover-colour;
-
-        &--name {
-            font-size: 1.5rem;
-        }
-
-        &--small {
-            font-size: 1.25rem;
-        }
-    }
-
-    &__labour {
-        padding-top: .5rem;
-    }
-
-
-    &__button--container {
-        box-sizing: border-box;
-        margin-top: 1rem;
-    }
-
-
-
-    &__apply-button {
-        box-sizing: border-box;
-        background-color: $primary-colour;
-        border-radius: 2rem;
-        border: 3px solid $hover-colour;
-        text-transform: uppercase;
-        font-weight: bold;
-        padding: (.25rem .5rem .25rem .5rem);
-    }
-}
+//         &--small {
+//             font-size: 1.25rem;
+//         }
+//     }
+//     &__labour {
+//         padding-top: .5rem;
+//     }
+//     &__button--container {
+//         box-sizing: border-box;
+//         margin-top: 1rem;
+//     }
+//     &__apply-button {
+//         box-sizing: border-box;
+//         background-color: $primary-colour;
+//         border-radius: 2rem;
+//         border: 3px solid $hover-colour;
+//         text-transform: uppercase;
+//         font-weight: bold;
+//         padding: (.25rem .5rem .25rem .5rem);
+//     }
+// }
