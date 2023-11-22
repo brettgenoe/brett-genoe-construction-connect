@@ -1,0 +1,60 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/reset.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
+.login {
+    &__container {
+        box-sizing: border-box;
+        max-width: 100%;
+        margin: 0 5%;
+
+        @include desktop {
+            margin: 0 2.5%;
+        }
+
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-header {
+            @include label-links-buttons;
+            padding: (1.5rem 0 0.25rem 0);
+            display: block;
+        }
+
+        // &-field {
+        //     // padding-top: 1.25rem;
+        // }
+
+        &-input {
+            @include input-field;
+            box-sizing: border-box;
+            width: 50vw;
+
+
+            @include tablet {
+                min-width: 40vw;
+            }
+
+            @include desktop {
+                min-width: 45vw
+            }
+        }
+
+        &-button {
+            @include button {
+                width: 50vw;
+                height: 2.5rem;
+                margin: (2rem 0);
+
+
+            }
+        }
+    }
+}

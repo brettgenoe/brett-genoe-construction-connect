@@ -13,7 +13,6 @@ const HomePage = () => {
                 <div className='home__media-queries'>
                     <section className='home__search--map'>
                         <h2 className='home__title--search'>Login to Search!</h2>
-                        <NavLink to={"./post"}><button className='home__post-button'>Let's Make a New Post!</button></NavLink>
                         <form className='search'>
                             <label className='search__label'>
                             </label>

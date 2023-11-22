@@ -53,10 +53,6 @@
             flex-direction: row-reverse;
         }
     }
-
-    &__post-button {
-        @include button;
-    }
 }
 
 .search {
