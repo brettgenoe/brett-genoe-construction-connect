@@ -1,23 +1,63 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./AddProfile.scss"
 const AddProfile = () => {
 
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState(false);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        axios
+            .post("http://localhost:8080/api/users/register", {
+                email: event.target.email.value,
+                password: event.target.password.value,
+                first_name: event.target.first_name.value,
+                last_name: event.target.last_name.value,
+                role: event.target.role.value,
+            })
+            .then(() => {
+                setSuccess(true);
+                setError("");
+                event.target.reset();
+            })
+            .catch((error) => {
+                setSuccess(false);
+                setError(error.response.data);
+            });
+    };
     return (
+
+
         <section className="add-new">
             <div className="add-new__container">
                 <h1 className="add-new__title">Add New Hard Hat Hero Profile </h1>
-                <form className="add-new__form">
+                <form className="add-new__form" onSubmit={handleSubmit}>
                     <div className="add-new__form--container">
                         <div className="add-new__form-left">
                             <label
-                                id="username"
+                                id="first_name"
                                 className="add-new__form-header">
-                                Username:
+                                First Name:
                             </label>
                             <input
-                                id="username"
+                                id="first_name"
                                 className="add-new__form-input"
-                                placeholder="Username"
+                                placeholder="First Name"
+                                type="text"
+                            />
+                            <label
+                                id="last_name"
+                                className="add-new__form-header">
+                                Last Name:
+                            </label>
+                            <input
+                                id="last_name"
+                                className="add-new__form-input"
+                                placeholder="Last Name"
+                                type="text"
                             />
                             <label
                                 id="password"
@@ -28,8 +68,9 @@ const AddProfile = () => {
                                 id="password"
                                 className="add-new__form-input"
                                 placeholder="Password goes here"
+                                type="password"
                             />
-                            <label
+                            {/* <label
                                 id="confirmPassword"
                                 className="add-new__form-header"
                             >
@@ -39,7 +80,7 @@ const AddProfile = () => {
                                 id="confirmPassword"
                                 className="add-new__form-input"
                                 placeholder="Confirm Password"
-                            />
+                            /> */}
                             <label
                                 id="email"
                                 className="add-new__form-header">
@@ -49,63 +90,35 @@ const AddProfile = () => {
                                 id="email"
                                 className="add-new__form-input"
                                 placeholder="Email"
+                                type="text"
+                            />
+                            <label
+                                id="role"
+                                className="add-new__form-header">
+                                Role:
+                            </label>
+                            <input
+                                id="role"
+                                className="add-new__form-input"
+                                placeholder="Role"
+                                type="text"
                             />
 
                         </div>
-                        <div className="add-new__form-right">
 
-                            <label
-                                id="address"
-                                className="add-new__form-header">
-                                Address:
-                            </label>
-                            <input
-                                id="address"
-                                className="add-new__form-input"
-                                placeholder="Address"
-                            />
-                            <label
-                                id="city"
-
-                                className="add-new__form-header">
-                                city:
-                            </label>
-                            <input
-                                id="city"
-                                className="add-new__form-input"
-                                placeholder="City"
-                            />
-                            <label
-                                id="province"
-                                className="add-new__form-header">
-                                Province:
-                            </label>
-                            <input
-                                id="province"
-                                className="add-new__form-input"
-                                placeholder="Province"
-                            />
-
-                            <label
-                                id="trade"
-                                className="add-new__form-header">
-                                Trade:
-                            </label>
-                            <input className="add-new__form-input"
-                                id="trade"
-                                placeholder="Trade"
-                            />
-                        </div>
                     </div>
 
                     <button
                         className="add-new__form-button"
                         type="submit">Create</button>
 
-
+                    {success && <div className="signup__message">Signed up!</div>}
+                    {error && <div className="signup__message">{error}</div>}
 
                 </form>
-
+                <p>
+                    Have an account? <Link to="/login">Log in</Link>
+                </p>
 
             </div>
 
