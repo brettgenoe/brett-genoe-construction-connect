@@ -9,11 +9,12 @@ mapboxgl.accessToken = "pk.eyJ1IjoiYnJldHRnZW5vZSIsImEiOiJjbHA0ZXJxdnEwY2MxMm1xb
 const AddPost = () => {
     const authContext = useAuth();
     const currentUser = authContext.currentUser;
+    console.log(currentUser.user_id)
     const [formData, setFormData] = useState({
         company_name: "",
         email: "",
         telephone: "",
-        manager_id: currentUser ? currentUser.id : null,
+        manager_id: currentUser.user_id,
         duration: "",
         description: "",
         carpenters_needed: "",

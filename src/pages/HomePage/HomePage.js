@@ -12,19 +12,38 @@ const HomePage = () => {
     const authToken = sessionStorage.getItem('token');
     const [userFirstName, setUserFirstName] = useState('');
 
+    // useEffect(() => {
+
+    //     if (loggedIn) {
+
+    //         axios.get('http://localhost:8080/api/users/current', {
+    //             headers: {
+    //                 Authorization: `Bearer ${authToken}`
+    //             }
+    //         })
+    //             .then(response => setUserFirstName(response.data.first_name))
+    //             .catch(error => console.error('Error fetching current user info:', error));
+    //     }
+    // }, [loggedIn]);
+
     useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/api/users/current', {
+                    headers: {
+                        Authorization: `Bearer ${authToken}`
+                    }
+                });
+                setUserFirstName(response.data.first_name);
+            } catch (error) {
+                console.error('Error fetching current user info:', error);
+            }
+        };
 
         if (loggedIn) {
-
-            axios.get('http://localhost:8080/api/users/current', {
-                headers: {
-                    Authorization: `Bearer ${authToken}`
-                }
-            })
-                .then(response => setUserFirstName(response.data.first_name))
-                .catch(error => console.error('Error fetching current user info:', error));
+            fetchUserData();
         }
-    }, [loggedIn]);
+    }, [loggedIn, authToken]);
 
     return (
         <>
