@@ -8,8 +8,8 @@ import './NavBar.scss';
 const NavBar = () => {
     const { loggedIn, logOut } = useAuth();
     console.log('NavBar - loggedIn:', loggedIn);
-    const authToken = sessionStorage.getItem('token');
-    const [userFirstName, setUserFirstName] = useState('');
+    // const authToken = sessionStorage.getItem('token');
+    // const [userFirstName, setUserFirstName] = useState('');
 
     // useEffect(() => {
 

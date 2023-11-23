@@ -100,7 +100,7 @@ const Mapbox = () => {
                             type: 'circle',
                             source: 'geojson-data',
                             paint: {
-                                'circle-radius': 6,
+                                'circle-radius': 8,
                                 'circle-color': '#CC958F',
                             },
                         });
