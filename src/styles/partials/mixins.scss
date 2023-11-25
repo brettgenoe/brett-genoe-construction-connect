@@ -45,14 +45,14 @@
 
 @mixin label-links-buttons {
     color: $primary-text;
-    font-size: 0.8125rem;
+    font-size: 1rem;
     line-height: 1.25rem;
     font-family: $text-family;
     font-weight: $text-bold;
     text-transform: uppercase;
 
     @include tablet {
-        font-size: 0.875rem;
+        font-size: 1rem;
         line-height: 1.375rem;
     }
 
@@ -129,14 +129,17 @@
 }
 
 @mixin button {
-    padding: (0.25rem);
-    min-width: 6rem;
+    padding: 0.25rem .5rem;
+    min-width: 7rem;
     background-color: $primary-colour ;
     border: 3px solid $hover-colour;
     border-radius: 2.5rem;
+    max-height: 2rem;
+
 
     @include label-links-buttons {
-        font-size: 1.125rem
+        font-size: 1.25rem;
+        line-height: 1;
     }
 
     ;
