@@ -1,20 +1,23 @@
 import axios from "axios";
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import React, { useState, useEffect } from "react";
+import Input from "../Input/Input.js"
 import { useAuth } from '../AuthContext/AuthContext';
-import "./AddPost.scss"
+import "./AddPost.scss";
+
 // mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 mapboxgl.accessToken = "pk.eyJ1IjoiYnJldHRnZW5vZSIsImEiOiJjbHA0ZXJxdnEwY2MxMm1xbDhjNnZpaWV5In0.p_muFdhbA9U0a96AlWixDQ";
 
 const AddPost = () => {
     const authContext = useAuth();
     const currentUser = authContext.currentUser;
-    console.log(currentUser.user_id)
+    console.log(currentUser)
+
     const [formData, setFormData] = useState({
         company_name: "",
         email: "",
         telephone: "",
-        manager_id: currentUser.user_id,
+        manager_id: currentUser ? currentUser.user_id : "",
         duration: "",
         description: "",
         carpenters_needed: "",
@@ -98,258 +101,180 @@ const AddPost = () => {
     return (
         <section className="add-new">
             <div className="add-new__container">
-                <h1 className="add-new__title">Add New Hard Hat Hero Profile </h1>
+                <h1 className="add-new__title">Post Your Job To Find New Hard Hat Heros</h1>
                 <form className="add-new__form" onSubmit={handleSubmit}>
                     <div className="add-new__form--container">
                         <div className="add-new__form-left">
-                            <label
+                            <Input
                                 id="company_name"
-                                className="add-new__form-header">
-                                Company Name:
-                            </label>
-                            <input
-                                id="company_name"
-                                className="add-new__form-input"
+                                label="Company Name"
                                 placeholder="Company Name"
                                 name="company_name"
+                                type="number"
                                 value={formData.company_name}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="address"
-                                className="add-new__form-header">
-                                Address:
-                            </label>
-                            <input
-                                id="address"
-                                className="add-new__form-input"
-                                placeholder="Project Address"
+                                label="Address"
+                                placeholder="Address"
                                 name="address"
+                                type='text'
                                 value={formData.address}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="email"
-                                className="add-new__form-header">
-                                email:
-                            </label>
-                            <input
-                                id="email"
-                                className="add-new__form-input"
+                                label="Email"
                                 placeholder="Email"
                                 name="email"
+                                type="email"
                                 value={formData.email}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="telephone"
-                                className="add-new__form-header">
-                                Telephone:
-                            </label>
-                            <input
-                                id="telephone"
-                                className="add-new__form-input"
+                                label="Telephone"
                                 placeholder="Telephone"
                                 name="telephone"
+                                type="tel"
                                 value={formData.telephone}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="duration"
-                                className="add-new__form-header"
-                            >
-                                Duration:
-                            </label>
-                            <input
-                                id="duration"
-                                className="add-new__form-input"
+                                label="Duration"
                                 placeholder="Duration of project"
                                 name="duration"
+                                type="text"
                                 value={formData.duration}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="description"
-                                className="add-new__form-header">
-                                Description:
-                            </label>
-                            <input
-                                id="description"
-                                className="add-new__form-input"
-                                placeholder="description"
+                                label="Description"
+                                placeholder="Description"
                                 name="description"
+                                type="text"
                                 value={formData.description}
                                 onChange={handleChange}
                             />
                         </div>
                         <div className="add-new__form-right">
-
-                            <label
+                            <Input
                                 id="carpenters_needed"
-                                className="add-new__form-header">
-                                Carpenters Needed:
-                            </label>
-                            <input
-                                id="carpenters_needed"
-                                className="add-new__form-input"
+                                label="Carpenters Needed"
                                 placeholder="# of Carpenters Needed"
                                 name="carpenters_needed"
+                                type="number"
                                 value={formData.carpenters_needed}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="carpenters_description"
-                                className="add-new__form-header">
-                                Description of Work:
-                            </label>
-                            <input
-                                id="carpenters_description"
-                                className="add-new__form-input"
-                                placeholder="Please describle the roles needed of the carpenters."
+                                label="Description of Work (Carpenters)"
+                                placeholder="Please describe the roles needed of the carpenters."
                                 name="carpenters_description"
+                                type="text"
                                 value={formData.carpenters_description}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="electricians_needed"
-                                className="add-new__form-header">
-                                Electricians Needed:
-                            </label>
-                            <input
-                                id="electricians_needed"
-                                className="add-new__form-input"
+                                label="Electricians Needed"
                                 placeholder="# of Electricians Needed"
                                 name="electricians_needed"
+                                type="number"
                                 value={formData.electricians_needed}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="electricians_description"
-                                className="add-new__form-header">
-                                Description of Work:
-                            </label>
-                            <input
-                                id="electricians_description"
-                                className="add-new__form-input"
-                                placeholder="Please describle the roles needed of the electricians."
+                                label="Description of Work (Electricians)"
+                                placeholder="Please describe the roles needed of the electricians."
                                 name="electricians_description"
+                                type="text"
                                 value={formData.electricians_description}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="plumbers_needed"
-                                className="add-new__form-header">
-                                Plumbers Needed:
-                            </label>
-                            <input
-                                id="plumbers_needed"
-                                className="add-new__form-input"
+                                label="Plumbers Needed"
                                 placeholder="# of Plumbers Needed"
                                 name="plumbers_needed"
+                                type="number"
                                 value={formData.plumbers_needed}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="plumbers_description"
-                                className="add-new__form-header">
-                                Description of Work:
-                            </label>
-                            <input
-                                id="plumbers_description"
-                                className="add-new__form-input"
-                                placeholder="Please describle the roles needed of the plumbers."
+                                label="Description of Work (Plumbers)"
+                                placeholder="Please describe the roles needed of the plumbers."
                                 name="plumbers_description"
+                                type="text"
                                 value={formData.plumbers_description}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="operators_needed"
-                                className="add-new__form-header">
-                                Operators Needed:
-                            </label>
-                            <input
-                                id="operators_needed"
-                                className="add-new__form-input"
+                                label="Operators Needed"
                                 placeholder="# of Operators Needed"
                                 name="operators_needed"
+                                type="number"
                                 value={formData.operators_needed}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="operators_description"
-                                className="add-new__form-header">
-                                Description of Work:
-                            </label>
-                            <input
-                                id="operators_description"
-                                className="add-new__form-input"
-                                placeholder="Please describle the roles needed of the operators."
+                                label="Description of Work (Operators)"
+                                placeholder="Please describe the roles needed of the operators."
                                 name="operators_description"
+                                type="text"
                                 value={formData.operators_description}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="labours_needed"
-                                className="add-new__form-header">
-                                Labours Needed:
-                            </label>
-                            <input
-                                id="labours_needed"
-                                className="add-new__form-input"
+                                label="Labours Needed"
                                 placeholder="# of Labours Needed"
                                 name="labours_needed"
+                                type="number"
                                 value={formData.labours_needed}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="labours_description"
-                                className="add-new__form-header">
-                                Description of Work:
-                            </label>
-                            <input
-                                id="labours_description"
-                                className="add-new__form-input"
-                                placeholder="Please describle the roles needed of the labours."
+                                label="Description of Work (Labours)"
+                                placeholder="Please describe the roles needed of the labours."
                                 name="labours_description"
+                                type="text"
                                 value={formData.labours_description}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="safety_needed"
-                                className="add-new__form-header">
-                                Safety Needed:
-                            </label>
-                            <input
-                                id="safety_needed"
-                                className="add-new__form-input"
+                                label="Safety Needed"
                                 placeholder="# of Safety Needed"
                                 name="safety_needed"
+                                type="number"
                                 value={formData.safety_needed}
                                 onChange={handleChange}
                             />
-                            <label
+                            <Input
                                 id="safety_description"
-                                className="add-new__form-header">
-                                Description of Work:
-                            </label>
-                            <input
-                                id="safety_description"
-                                className="add-new__form-input"
-                                placeholder="Please describle the roles needed of the safety."
+                                label="Description of Work (Safety)"
+                                placeholder="Please describe the roles needed of the safety."
                                 name="safety_description"
+                                type="text"
                                 value={formData.safety_description}
                                 onChange={handleChange}
                             />
-
                         </div>
                     </div>
 
                     <button
                         className="add-new__form-button"
                         type="submit">Create</button>
-
-
-
                 </form>
 
 

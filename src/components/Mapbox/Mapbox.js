@@ -5,6 +5,7 @@ import MapPopup from "../MapPopup/MapPopup"
 // import geojsonData from "../../data/projects.geojson";
 // import { renderToString } from 'react-dom/server';
 import axios from "axios";
+// mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 mapboxgl.accessToken = "pk.eyJ1IjoiYnJldHRnZW5vZSIsImEiOiJjbHA0ZXJxdnEwY2MxMm1xbDhjNnZpaWV5In0.p_muFdhbA9U0a96AlWixDQ";
 

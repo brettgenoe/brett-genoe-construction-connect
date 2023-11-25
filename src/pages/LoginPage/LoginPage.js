@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../components/AuthContext/AuthContext';
+import Input from '../../components/Input/Input';
 
 
 const LoginPage = () => {
@@ -43,7 +44,7 @@ const LoginPage = () => {
                 }
             })
             .catch((error) => {
-                const errorMessage = error.response?.data?.message || "An error occurred";
+                const errorMessage = error.response?.data?.message || "Please enter valid email and corresponding password.";
                 setError(errorMessage);
                 // setLoggedIn(false);
             });
@@ -58,46 +59,30 @@ const LoginPage = () => {
                     onSubmit={handleSubmit}
                 >
                     <div>
-                        <div className='login__form-field'>
-                            <label
-                                id="email"
-                                className="login__form-header">
-                                Email:
-                            </label>
-                            <input
-                                id="email"
-                                className="login__form-input"
-                                placeholder="Email"
-                                type='text'
-                            />
-                        </div>
-                        <div className='login__form-field'>
-                            <label
-                                id="password"
-                                className="login__form-header">
-                                Password:
-                            </label>
-                            <input
-                                id="password"
-                                className="login__form-input"
-                                placeholder="Password goes here"
-                                type='password'
-                            />
-                        </div>
+                        <Input
+                            label="Email:"
+                            id="email"
+                            placeholder="Email"
+                            type="text"
+                        />
+                        <Input
+                            label="Password:"
+                            id="password"
+                            placeholder="Password goes here"
+                            type="password"
+                        />
                     </div>
                     <button
                         className="login__form-button"
                         type="submit">Log in</button>
 
-
-                    {/* {error && <div className="login__message">{error.message}</div>} */}
                     {error && <div className="login__message">{JSON.stringify(error)}</div>}
                 </form>
 
-                <p>
-                    Need an account? <Link to="/signup">Sign up</Link>
+                <p className='login__message'>
+                    Need an account? <Link to="/signup" className='login__message--link'>Sign up</Link>
                 </p>
-            </main>
+            </main >
         </>
     )
 }

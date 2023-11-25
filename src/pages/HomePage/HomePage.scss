@@ -5,7 +5,7 @@
 
 
 .home {
-    background-color: $primary-background-colour;
+    background-color: white;
     padding: 5%;
     box-sizing: border-box;
 
@@ -33,10 +33,10 @@
         // background: url("../../assets/images/stockmap.jpeg");
         // background-size: contain;
 
-        @include tablet {
-            width: 80%;
-            height: 80%;
-        }
+        // @include tablet {
+        //     width: 80%;
+        //     height: 80%;
+        // }
     }
 
     &__search--map {
@@ -50,7 +50,7 @@
         flex-direction: column;
 
         @include tablet {
-            flex-direction: row-reverse;
+            // flex-direction: row-reverse;
         }
     }
 }

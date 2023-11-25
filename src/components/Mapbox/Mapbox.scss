@@ -14,10 +14,10 @@
     border: 3px solid $hover-colour;
     z-index: 4;
 
-    @include tablet {
-        height: 70vw;
-        width: 55vw;
-    }
+    // @include tablet {
+    //     height: 70vw;
+    //     width: 55vw;
+    // }
 }
 
 .map-container {
@@ -27,10 +27,10 @@
     position: relative;
     box-sizing: border-box;
 
-    @include tablet {
-        max-height: 70vw;
-        max-width: 55vw;
-    }
+    // @include tablet {
+    //     max-height: 70vw;
+    //     max-width: 55vw;
+    // }
 }
 
 .sidebar {
