@@ -1,17 +1,20 @@
-import React from "react";
-import "./AddPost.scss"
 import axios from "axios";
-import { useState, useEffect } from "react";
+import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import React, { useState, useEffect } from "react";
+import { useAuth } from '../AuthContext/AuthContext';
+import "./AddPost.scss"
+// mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+mapboxgl.accessToken = "pk.eyJ1IjoiYnJldHRnZW5vZSIsImEiOiJjbHA0ZXJxdnEwY2MxMm1xbDhjNnZpaWV5In0.p_muFdhbA9U0a96AlWixDQ";
 
 const AddPost = () => {
+    const authContext = useAuth();
+    const currentUser = authContext.currentUser;
+    console.log(currentUser.user_id)
     const [formData, setFormData] = useState({
         company_name: "",
         email: "",
         telephone: "",
-        // geo_data: {
-        //     coordinates: [0, 0]
-        // },
-        manager_id: 4,
+        manager_id: currentUser.user_id,
         duration: "",
         description: "",
         carpenters_needed: "",
@@ -26,29 +29,45 @@ const AddPost = () => {
         safety_description: "",
         labours_needed: "",
         labours_description: "",
-
+        geo_data: {
+            coordinates: ["", ""]
+        },
+        address: "",
     });
 
     const [newProject, setNewProject] = useState(null);
 
-    const handleChange = (e) => {
+    const handleChange = async (e) => {
+
         if (e.target.name === "latitude" || e.target.name === "longitude") {
-            setFormData({
-                ...formData,
-                // geo_data: {
-                //     ...formData.geo_data,
-                //     coordinates: [
-                //         e.target.name === "latitude" ? e.target.value : formData.geo_data.coordinates[0],
-                //         e.target.name === "longitude" ? e.target.value : formData.geo_data.coordinates[1]
-                //     ]
-                // }
-            });
+
+        } else if (e.target.name === "address") {
+
+            const address = e.target.value;
+
+            try {
+                const response = await axios.get(
+                    `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(address)}.json?access_token=${mapboxgl.accessToken}`
+                );
+
+                const [longitude, latitude] = response.data.features[0].center;
+
+
+                setFormData({
+                    ...formData,
+                    geo_data: {
+                        coordinates: [longitude, latitude],
+                    },
+                    address,
+                });
+            } catch (error) {
+                console.error('Error fetching coordinates from Mapbox Geocoding API:', error);
+            }
         } else {
 
             setFormData({
                 ...formData,
                 [e.target.name]: e.target.value,
-
             });
         }
     };
@@ -96,28 +115,19 @@ const AddPost = () => {
                                 value={formData.company_name}
                                 onChange={handleChange}
                             />
-                            <label id="latitude" className="add-new__form-header">
-                                Latitude:
+                            <label
+                                id="address"
+                                className="add-new__form-header">
+                                Address:
                             </label>
-                            {/* <input
-                                id="latitude"
+                            <input
+                                id="address"
                                 className="add-new__form-input"
-                                placeholder="Latitude"
-                                name="latitude"
-                                value={formData.geo_data.coordinates[0]}
+                                placeholder="Project Address"
+                                name="address"
+                                value={formData.address}
                                 onChange={handleChange}
-                            /> */}
-                            <label id="longitude" className="add-new__form-header">
-                                Longitude:
-                            </label>
-                            {/* <input
-                                id="longitude"
-                                className="add-new__form-input"
-                                placeholder="Longitude"
-                                name="longitude"
-                                value={formData.geo_data.coordinates[1]}
-                                onChange={handleChange}
-                            /> */}
+                            />
                             <label
                                 id="email"
                                 className="add-new__form-header">

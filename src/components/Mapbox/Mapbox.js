@@ -26,7 +26,7 @@ const Mapbox = () => {
 
                 const response = await axios.get("http://localhost:8080/api/projects");
                 const projects = response.data;
-                console.log(response.data)
+                // console.log(response.data)
 
 
                 const newGeojsonData = {
@@ -100,7 +100,7 @@ const Mapbox = () => {
                             type: 'circle',
                             source: 'geojson-data',
                             paint: {
-                                'circle-radius': 6,
+                                'circle-radius': 8,
                                 'circle-color': '#CC958F',
                             },
                         });

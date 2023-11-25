@@ -1,13 +1,17 @@
-import React from 'react';
+
 import './LoginPage.scss'
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '../../components/AuthContext/AuthContext';
 
 
 const LoginPage = () => {
     const [error, setError] = useState("");
     const navigate = useNavigate();
+    const auth = useAuth();
+    // const [loggedIn, setLoggedIn] = useState(false)
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -16,14 +20,35 @@ const LoginPage = () => {
             email: event.target.email.value,
             password: event.target.password.value
         })
-            .then((response) => {
+            .then(async (response) => {
                 sessionStorage.setItem("token", response.data.token);
-                navigate('/');
+
+                try {
+                    const userResponse = await axios.get("http://localhost:8080/api/users/current", {
+                        headers: {
+                            Authorization: `Bearer ${response.data.token}`
+                        }
+                    });
+
+                    console.log("Attempting to log in in loginpage");
+
+                    // setLoggedIn(true);
+                    auth.logIn();
+                    navigate('/');
+
+                    console.log("Welcome, " + userResponse.data.first_name);
+                } catch (error) {
+                    console.error("Error fetching user information", error);
+                    // setLoggedIn(false);
+                }
             })
             .catch((error) => {
-                setError(error.response.data);
+                const errorMessage = error.response?.data?.message || "An error occurred";
+                setError(errorMessage);
+                // setLoggedIn(false);
             });
     };
+
 
 
     return (
@@ -65,7 +90,8 @@ const LoginPage = () => {
                         type="submit">Log in</button>
 
 
-                    {error && <div className="login__message">{error}</div>}
+                    {/* {error && <div className="login__message">{error.message}</div>} */}
+                    {error && <div className="login__message">{JSON.stringify(error)}</div>}
                 </form>
 
                 <p>
