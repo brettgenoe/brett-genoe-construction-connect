@@ -5,32 +5,45 @@
 
 
 
-.map-section {
-    position: relative;
-    box-sizing: border-box;
-    height: 100%;
-    margin-bottom: 4rem;
-    width: 100%;
-    border: 3px solid $hover-colour;
-    z-index: 4;
+.map {
 
-    // @include tablet {
-    //     height: 70vw;
-    //     width: 55vw;
-    // }
-}
+    &-section {
+        position: relative;
+        box-sizing: border-box;
+        height: 100%;
+        margin-bottom: 4rem;
+        width: 100%;
+        border: 3px solid $hover-colour;
+        z-index: 4;
 
-.map-container {
-    min-height: 90vw;
-    max-height: 90vw;
-    max-width: 90vw;
-    position: relative;
-    box-sizing: border-box;
+        @include tablet {
+            max-width: 45vw;
+            // max-height: 50vw;
+        }
+    }
 
-    // @include tablet {
-    //     max-height: 70vw;
-    //     max-width: 55vw;
-    // }
+    &-container {
+        min-height: 90vw;
+        max-height: 90vw;
+        max-width: 90vw;
+        position: relative;
+        box-sizing: border-box;
+
+        @include tablet {
+            max-width: 45vw;
+            min-height: 60vw;
+            max-height: 60vw;
+        }
+    }
+
+    &__flex-container {
+        @include tablet {
+            display: flex;
+            width: 90vw;
+
+            gap: 5%;
+        }
+    }
 }
 
 .sidebar {
@@ -56,9 +69,15 @@
     }
 
     &__title {
-        @include page-header;
-        width: fit-content;
-        border-bottom: .25rem solid $hover-colour;
+        @include page-header {
+            font-size: 1.75rem;
+            width: fit-content;
+            border-bottom: .25rem solid $hover-colour;
+
+            @include tablet {
+                font-size: 2rem;
+            }
+        }
     }
 
 }

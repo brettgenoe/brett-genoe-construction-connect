@@ -35,23 +35,12 @@
         position: relative;
         // width: 90vw;
         // height: 90vw;
-
-        // box-sizing: border-box;
-        // position: relative;
-        // border: 3px solid $border-colour;
-        // border-radius: 2rem;
-        // background: url("../../assets/images/stockmap.jpeg");
-        // background-size: contain;
-
-        // @include tablet {
-        //     width: 80%;
-        //     height: 80%;
-        // }
     }
 
     &__search--map {
         @include tablet {
-            width: 60vw;
+            width: 50vw;
+            // height: 20vw;
         }
     }
 
@@ -101,41 +90,3 @@
         }
     }
 }
-
-// .result {
-//     margin-top: 1rem;
-//     margin-bottom: 2rem;
-//     box-sizing: border-box;
-//     @include tablet {
-//         width: 40%;
-//     }
-
-//     &__title {
-//         text-transform: uppercase;
-//         max-width: fit-content;
-//         border-bottom: 2px solid $hover-colour;
-//         &--name {
-//             font-size: 1.5rem;
-//         }
-
-//         &--small {
-//             font-size: 1.25rem;
-//         }
-//     }
-//     &__labour {
-//         padding-top: .5rem;
-//     }
-//     &__button--container {
-//         box-sizing: border-box;
-//         margin-top: 1rem;
-//     }
-//     &__apply-button {
-//         box-sizing: border-box;
-//         background-color: $primary-colour;
-//         border-radius: 2rem;
-//         border: 3px solid $hover-colour;
-//         text-transform: uppercase;
-//         font-weight: bold;
-//         padding: (.25rem .5rem .25rem .5rem);
-//     }
-// }

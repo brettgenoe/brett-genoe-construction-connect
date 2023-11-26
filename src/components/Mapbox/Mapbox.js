@@ -2,8 +2,6 @@ import "./Mapbox.scss"
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import MapPopup from "../MapPopup/MapPopup"
-// import geojsonData from "../../data/projects.geojson";
-// import { renderToString } from 'react-dom/server';
 import axios from "axios";
 // mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
@@ -137,26 +135,6 @@ const Mapbox = () => {
 
                     map.current.on('move', handleEvent);
                     map.current.on('click', handleEvent);
-
-                    // map.current.on('load', () => {
-                    //     if (!map.current.getSource('geojson-data')) {
-                    //         map.current.addSource('geojson-data', {
-                    //             type: 'geojson',
-                    //             data: geojsonData,
-                    //         });
-
-                    //         map.current.addLayer({
-                    //             id: 'geojson-layer',
-                    //             type: 'circle',
-                    //             source: 'geojson-data',
-                    //             paint: {
-                    //                 'circle-radius': 6,
-                    //                 'circle-color': '#CC958F',
-                    //             },
-                    //         });
-                    //     }
-                    // });
-                    // setLoading(false);
                 }
             } catch (error) {
                 console.error('Map Initialization Error:', error);
@@ -174,7 +152,7 @@ const Mapbox = () => {
     }
 
     return (
-        <section>
+        <section className="map__flex-container">
             <div className="map-section">
                 <div className="sidebar">
                     Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}

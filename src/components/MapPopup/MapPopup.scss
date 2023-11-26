@@ -10,10 +10,13 @@
         position: relative;
         min-height: min-content;
         box-sizing: border-box;
-        // background-color: lightgray;
-        // height: 70vh;
         top: 1rem;
         left: 0rem;
+
+        &--contact-info {
+            padding-bottom: 1rem;
+            border-bottom: 3px solid $hover-colour;
+        }
 
     }
 
@@ -22,11 +25,19 @@
         padding-bottom: .5rem;
         font-size: 1.75rem;
 
+        @include tablet {
+            font-size: 1.75rem;
+        }
+
     }
 
     &__address {
         @include subheader;
-        font-size: 1.5rem
+        font-size: 1.5rem;
+
+        @include tablet {
+            font-size: 1.45rem;
+        }
     }
 
     &__description {
@@ -34,7 +45,7 @@
         font-size: 1.25rem;
         line-height: 1.5;
         font-weight: 600;
-        padding-top: .5rem;
+        padding: .5rem 0;
         border-bottom: 1.5px solid $hover-colour;
     }
 
@@ -47,6 +58,7 @@
         @include label-links-buttons;
         font-size: 1.5rem;
         padding-top: 1rem;
+        margin-bottom: 1rem;
         width: fit-content;
         border-bottom: .25rem solid $hover-colour;
     }
