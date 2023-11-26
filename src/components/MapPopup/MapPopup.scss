@@ -10,48 +10,75 @@
         position: relative;
         min-height: min-content;
         box-sizing: border-box;
-        // background-color: lightgray;
-        // height: 70vh;
         top: 1rem;
         left: 0rem;
+
+        &--contact-info {
+            padding-bottom: 1rem;
+            border-bottom: 3px solid $hover-colour;
+        }
+
     }
 
     &__company-name {
         @include page-header;
-        padding-bottom: .5rem
+        padding-bottom: .5rem;
+        font-size: 1.75rem;
+
+        @include tablet {
+            font-size: 1.75rem;
+        }
+
     }
 
     &__address {
         @include subheader;
-        font-size: 1.5rem
+        font-size: 1.5rem;
+
+        @include tablet {
+            font-size: 1.45rem;
+        }
     }
 
     &__description {
         @include body-large;
         font-size: 1.25rem;
         line-height: 1.5;
+        font-weight: 600;
+        padding: .5rem 0;
+        border-bottom: 1.5px solid $hover-colour;
     }
 
     &__duration {
         @include subheader;
-        padding-bottom: .5rem;
+        padding: .5rem 0;
     }
 
     &__header {
         @include label-links-buttons;
-        font-size: 1.25rem;
+        font-size: 1.5rem;
+        padding-top: 1rem;
+        margin-bottom: 1rem;
+        width: fit-content;
+        border-bottom: .25rem solid $hover-colour;
     }
 
     &__trade {
         @include body-large;
+        font-size: 1.25rem;
+        padding-top: .5rem
     }
 
     &__email {
         @include label-links-buttons;
+        font-size: 1.25rem;
+        line-height: 1.5;
     }
 
     &__phone {
         @include label-links-buttons;
+        font-size: 1.25rem;
+        line-height: 1.5;
     }
 
     &__link {

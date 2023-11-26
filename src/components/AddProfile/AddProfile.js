@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Input from "../Input/Input";
 import "./AddProfile.scss"
 const AddProfile = () => {
 
@@ -32,12 +33,12 @@ const AddProfile = () => {
 
 
         <section className="add-new">
-            <div className="add-new__container">
+            <div className="signup__container">
                 <h1 className="add-new__title">Add New Hard Hat Hero Profile </h1>
                 <form className="add-new__form" onSubmit={handleSubmit}>
                     <div className="add-new__form--container">
                         <div className="add-new__form-left">
-                            <label
+                            {/* <label
                                 id="first_name"
                                 className="add-new__form-header">
                                 First Name:
@@ -47,8 +48,20 @@ const AddProfile = () => {
                                 className="add-new__form-input"
                                 placeholder="First Name"
                                 type="text"
+                            /> */}
+                            <Input
+                                label="First Name:"
+                                id="first_name"
+                                placeholder="First Name"
+                                type="text"
                             />
-                            <label
+                            <Input
+                                label="Last Name:"
+                                id="last_name"
+                                placeholder="Last Name"
+                                type="text"
+                            />
+                            {/* <label
                                 id="last_name"
                                 className="add-new__form-header">
                                 Last Name:
@@ -58,8 +71,14 @@ const AddProfile = () => {
                                 className="add-new__form-input"
                                 placeholder="Last Name"
                                 type="text"
+                            /> */}
+                            <Input
+                                label="Password:"
+                                id="password"
+                                placeholder="Password"
+                                type="password"
                             />
-                            <label
+                            {/* <label
                                 id="password"
                                 className="add-new__form-header">
                                 Password:
@@ -69,7 +88,7 @@ const AddProfile = () => {
                                 className="add-new__form-input"
                                 placeholder="Password goes here"
                                 type="password"
-                            />
+                            /> */}
                             {/* <label
                                 id="confirmPassword"
                                 className="add-new__form-header"
@@ -81,7 +100,13 @@ const AddProfile = () => {
                                 className="add-new__form-input"
                                 placeholder="Confirm Password"
                             /> */}
-                            <label
+                            <Input
+                                label="Email:"
+                                id="email"
+                                placeholder="Email"
+                                type="text"
+                            />
+                            {/* <label
                                 id="email"
                                 className="add-new__form-header">
                                 Email:
@@ -91,8 +116,14 @@ const AddProfile = () => {
                                 className="add-new__form-input"
                                 placeholder="Email"
                                 type="text"
+                            /> */}
+                            <Input
+                                label="Role:"
+                                id="role"
+                                placeholder="Role"
+                                type="text"
                             />
-                            <label
+                            {/* <label
                                 id="role"
                                 className="add-new__form-header">
                                 Role:
@@ -102,22 +133,22 @@ const AddProfile = () => {
                                 className="add-new__form-input"
                                 placeholder="Role"
                                 type="text"
-                            />
+                            /> */}
 
                         </div>
 
                     </div>
 
                     <button
-                        className="add-new__form-button"
+                        className="signup-button"
                         type="submit">Create</button>
 
                     {success && <div className="signup__message">Signed up!</div>}
                     {error && <div className="signup__message">{error}</div>}
 
                 </form>
-                <p>
-                    Have an account? <Link to="/login">Log in</Link>
+                <p className="signup__message">
+                    Have an account? <Link to="/login" className="signup__message--link">Log in</Link>
                 </p>
 
             </div>

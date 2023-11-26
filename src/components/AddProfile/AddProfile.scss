@@ -3,76 +3,130 @@
 @use "../../styles/partials/mixins.scss" as *;
 
 
-.add-new {
-    display: flex;
-    flex-direction: column;
+// .add-new {
+//     display: flex;
+//     flex-direction: column;
 
+
+//     &__container {
+//         box-sizing: border-box;
+//         max-width: 100%;
+//         margin: 0 5%;
+
+//         @include desktop {
+//             margin: 0 2.5%;
+//         }
+
+//     }
+
+//     &__form {
+
+//         &--container {
+
+//             @include tablet {
+//                 display: flex;
+//                 justify-content: space-between;
+//             }
+//         }
+
+//         &-left {
+//             display: flex;
+//             flex-direction: column;
+//         }
+
+//         &-right {
+//             display: flex;
+//             flex-direction: column;
+//         }
+
+//         &-header {
+//             @include label-links-buttons;
+//             padding: (1.5rem 0 0.25rem 0);
+//         }
+
+//         &-input {
+//             @include input-field;
+
+
+//             @include tablet {
+//                 min-width: 40vw;
+//             }
+
+//             @include desktop {
+//                 min-width: 45vw
+//             }
+//         }
+
+//         &-button {
+//             @include button {
+//                 width: 100%;
+//                 margin: (2rem 0);
+//                 height: 2.25rem;
+
+//                 @include tablet {
+//                     width: 20%;
+//                     margin-left: 40%;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+.signup {
+
+    &__message {
+        @include label-links-buttons {
+            line-height: 1.5;
+            padding-bottom: .5rem;
+            margin: 1rem 0;
+
+            @include tablet {
+                font-size: 1rem;
+            }
+        }
+
+        &--link {
+            text-decoration: underline;
+            text-decoration-color: $hover-colour;
+            text-decoration-thickness: 2px;
+
+            &:hover {
+                opacity: 70%;
+            }
+        }
+
+    }
 
     &__container {
         box-sizing: border-box;
         max-width: 100%;
         margin: 0 5%;
 
+        @include tablet {
+            margin: 2.5% 7.5%;
+        }
+
         @include desktop {
-            margin: 0 2.5%;
+            margin: 2% 10%;
         }
 
     }
 
-    &__form {
-
-        &--container {
-
-            @include tablet {
-                display: flex;
-                justify-content: space-between;
-            }
-        }
-
-        &-left {
-            display: flex;
-            flex-direction: column;
-        }
-
-        &-right {
-            display: flex;
-            flex-direction: column;
-        }
-
-        &-header {
-            @include label-links-buttons;
-            padding: (1.5rem 0 0.25rem 0);
-        }
-
-        &-input {
-            @include input-field;
-
+    &-button {
+        @include button {
+            width: 100%;
+            margin: (2.5rem 0);
+            height: 2.5rem;
 
             @include tablet {
-                min-width: 40vw;
+                width: 40vw;
+                margin-left: 0%;
             }
 
             @include desktop {
-                min-width: 45vw
+                width: 20vw;
+
             }
         }
-
-        &-button {
-            @include button {
-                width: 100%;
-                margin: (2rem 0);
-
-                @include tablet {
-                    width: 20%;
-                    margin-left: 80%;
-                }
-            }
-        }
-
     }
-
-
-
-
-
 }

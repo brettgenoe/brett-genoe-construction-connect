@@ -11,8 +11,9 @@
         width: 100%;
         background-color: $primary-background-colour;
         box-sizing: border-box;
-        padding: (1rem 2.5% 2rem 2.5%);
+        padding: 1rem 2.5%;
         border-bottom: 4px solid $hover-colour;
+
 
     }
 
@@ -26,14 +27,28 @@
         box-sizing: border-box;
         justify-content: flex-end;
         gap: 1rem;
+
+        @include tablet {
+            padding-bottom: 1rem;
+        }
     }
 
     &__logo {
-        height: 2.5em;
+        height: 2.5rem;
+
+        @include tablet {
+            height: 3rem;
+        }
     }
 
     &__button {
-        @include button;
+        @include button {
+            height: 2rem;
+
+            @include tablet {
+                height: 2.5rem;
+            }
+        }
     }
 
     &__title {
@@ -41,8 +56,8 @@
         box-sizing: border-box;
         text-align: center;
 
-        @include tablet {
-            padding-bottom: 2rem;
-        }
+        // @include tablet {
+        //     padding-bottom: 2rem;
+        // }
     }
 }

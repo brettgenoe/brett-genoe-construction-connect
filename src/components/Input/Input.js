@@ -1,7 +1,7 @@
 import "./Input.scss";
 import { useAuth } from "../AuthContext/AuthContext";
 
-function Input({ label, id, placeholder, name, type, value, onChange }) {
+function Input({ label, id, placeholder, name, type, value, className, onChange }) {
     return (
         <div className="field">
             <label id={id} className="field__label">
@@ -12,7 +12,7 @@ function Input({ label, id, placeholder, name, type, value, onChange }) {
                 id={id}
                 name={name}
                 placeholder={placeholder}
-                className="field__input"
+                className={`field__input  ${className} `}
                 value={value}
                 onChange={onChange} />
         </div>

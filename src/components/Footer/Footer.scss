@@ -10,6 +10,10 @@
     padding: (.75rem 2.5% 0rem 2.5%);
     box-sizing: border-box;
 
+    @include tablet {
+        padding: 1rem 5%;
+    }
+
     &__title {
         font-size: 1.125rem;
 
