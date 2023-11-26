@@ -11,7 +11,14 @@ mapboxgl.accessToken = "pk.eyJ1IjoiYnJldHRnZW5vZSIsImEiOiJjbHA0ZXJxdnEwY2MxMm1xb
 const AddPost = () => {
     const authContext = useAuth();
     const currentUser = authContext.currentUser;
-    console.log(currentUser)
+    // const [showDescriptions, setShowDescriptions] = useState({
+    //     carpenters: 0,
+    //     electricians: 0,
+    //     plumbers: 0,
+    //     operators: 0,
+    //     safety: 0,
+    //     labours: 0,
+    // });
 
     const [formData, setFormData] = useState({
         company_name: "",
@@ -66,7 +73,15 @@ const AddPost = () => {
             } catch (error) {
                 console.error('Error fetching coordinates from Mapbox Geocoding API:', error);
             }
-        } else {
+        }
+        // else if (e.target.name.endsWith("_needed")) {
+        //     const trade = e.target.name.replace("_needed", "");
+        //     setShowDescriptions((prevState) => ({
+        //         ...prevState,
+        //         [trade]: +e.target.value, // Use + to convert to a number
+        //     }));
+        // } 
+        else {
 
             setFormData({
                 ...formData,
@@ -144,7 +159,7 @@ const AddPost = () => {
                             <Input
                                 id="duration"
                                 label="Duration"
-                                placeholder="Duration of project"
+                                placeholder="Duration of project in months"
                                 name="duration"
                                 type="text"
                                 value={formData.duration}
@@ -155,12 +170,14 @@ const AddPost = () => {
                                 label="Description"
                                 placeholder="Description"
                                 name="description"
+                                className="description"
                                 type="text"
                                 value={formData.description}
                                 onChange={handleChange}
                             />
                         </div>
                         <div className="add-new__form-right">
+
                             <Input
                                 id="carpenters_needed"
                                 label="Carpenters Needed"
@@ -170,15 +187,17 @@ const AddPost = () => {
                                 value={formData.carpenters_needed}
                                 onChange={handleChange}
                             />
-                            <Input
-                                id="carpenters_description"
-                                label="Description of Work (Carpenters)"
-                                placeholder="Please describe the roles needed of the carpenters."
-                                name="carpenters_description"
-                                type="text"
-                                value={formData.carpenters_description}
-                                onChange={handleChange}
-                            />
+                            {formData.carpenters_needed > 0 && (
+                                <Input
+                                    id="carpenters_description"
+                                    label="Description of Work (Carpenters)"
+                                    placeholder="Please describe the roles needed of the carpenters."
+                                    name="carpenters_description"
+                                    type="text"
+                                    value={formData.carpenters_description}
+                                    onChange={handleChange}
+                                />
+                            )}
                             <Input
                                 id="electricians_needed"
                                 label="Electricians Needed"
@@ -188,15 +207,17 @@ const AddPost = () => {
                                 value={formData.electricians_needed}
                                 onChange={handleChange}
                             />
-                            <Input
-                                id="electricians_description"
-                                label="Description of Work (Electricians)"
-                                placeholder="Please describe the roles needed of the electricians."
-                                name="electricians_description"
-                                type="text"
-                                value={formData.electricians_description}
-                                onChange={handleChange}
-                            />
+                            {formData.electricians_needed > 0 && (
+                                <Input
+                                    id="electricians_description"
+                                    label="Description of Work (Electricians)"
+                                    placeholder="Please describe the roles needed of the electricians."
+                                    name="electricians_description"
+                                    type="text"
+                                    value={formData.electricians_description}
+                                    onChange={handleChange}
+                                />
+                            )}
                             <Input
                                 id="plumbers_needed"
                                 label="Plumbers Needed"
@@ -206,15 +227,17 @@ const AddPost = () => {
                                 value={formData.plumbers_needed}
                                 onChange={handleChange}
                             />
-                            <Input
-                                id="plumbers_description"
-                                label="Description of Work (Plumbers)"
-                                placeholder="Please describe the roles needed of the plumbers."
-                                name="plumbers_description"
-                                type="text"
-                                value={formData.plumbers_description}
-                                onChange={handleChange}
-                            />
+                            {formData.plumbers_needed > 0 && (
+                                <Input
+                                    id="plumbers_description"
+                                    label="Description of Work (Plumbers)"
+                                    placeholder="Please describe the roles needed of the plumbers."
+                                    name="plumbers_description"
+                                    type="text"
+                                    value={formData.plumbers_description}
+                                    onChange={handleChange}
+                                />
+                            )}
                             <Input
                                 id="operators_needed"
                                 label="Operators Needed"
@@ -224,15 +247,17 @@ const AddPost = () => {
                                 value={formData.operators_needed}
                                 onChange={handleChange}
                             />
-                            <Input
-                                id="operators_description"
-                                label="Description of Work (Operators)"
-                                placeholder="Please describe the roles needed of the operators."
-                                name="operators_description"
-                                type="text"
-                                value={formData.operators_description}
-                                onChange={handleChange}
-                            />
+                            {formData.operators_needed > 0 && (
+                                <Input
+                                    id="operators_description"
+                                    label="Description of Work (Operators)"
+                                    placeholder="Please describe the roles needed of the operators."
+                                    name="operators_description"
+                                    type="text"
+                                    value={formData.operators_description}
+                                    onChange={handleChange}
+                                />
+                            )}
                             <Input
                                 id="labours_needed"
                                 label="Labours Needed"
@@ -242,15 +267,17 @@ const AddPost = () => {
                                 value={formData.labours_needed}
                                 onChange={handleChange}
                             />
-                            <Input
-                                id="labours_description"
-                                label="Description of Work (Labours)"
-                                placeholder="Please describe the roles needed of the labours."
-                                name="labours_description"
-                                type="text"
-                                value={formData.labours_description}
-                                onChange={handleChange}
-                            />
+                            {formData.labours_needed > 0 && (
+                                <Input
+                                    id="labours_description"
+                                    label="Description of Work (Labours)"
+                                    placeholder="Please describe the roles needed of the labours."
+                                    name="labours_description"
+                                    type="text"
+                                    value={formData.labours_description}
+                                    onChange={handleChange}
+                                />
+                            )}
                             <Input
                                 id="safety_needed"
                                 label="Safety Needed"
@@ -260,15 +287,17 @@ const AddPost = () => {
                                 value={formData.safety_needed}
                                 onChange={handleChange}
                             />
-                            <Input
-                                id="safety_description"
-                                label="Description of Work (Safety)"
-                                placeholder="Please describe the roles needed of the safety."
-                                name="safety_description"
-                                type="text"
-                                value={formData.safety_description}
-                                onChange={handleChange}
-                            />
+                            {formData.safety_needed > 0 && (
+                                <Input
+                                    id="safety_description"
+                                    label="Description of Work (Safety)"
+                                    placeholder="Please describe the roles needed of the safety."
+                                    name="safety_description"
+                                    type="text"
+                                    value={formData.safety_description}
+                                    onChange={handleChange}
+                                />
+                            )}
                         </div>
                     </div>
 

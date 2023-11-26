@@ -45,7 +45,7 @@
 
 @mixin label-links-buttons {
     color: $primary-text;
-    font-size: 1rem;
+    font-size: .875rem;
     line-height: 1.25rem;
     font-family: $text-family;
     font-weight: $text-bold;
@@ -124,8 +124,9 @@
     border: 0.1875rem solid $hover-colour;
     border-radius: 2rem;
     padding: (0.5rem 0 .5rem .5rem);
+    box-sizing: border-box;
 
-    @content
+    @content;
 }
 
 @mixin button {
@@ -134,11 +135,11 @@
     background-color: $primary-colour ;
     border: 3px solid $hover-colour;
     border-radius: 2.5rem;
-    max-height: 2rem;
+    // max-height: 2rem;
 
 
     @include label-links-buttons {
-        font-size: 1.25rem;
+        font-size: 1rem;
         line-height: 1;
     }
 
@@ -152,5 +153,5 @@
         cursor: pointer;
     }
 
-    @content
+    @content;
 }

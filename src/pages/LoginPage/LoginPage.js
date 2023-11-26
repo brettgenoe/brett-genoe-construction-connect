@@ -58,7 +58,7 @@ const LoginPage = () => {
                 <form className='login__form'
                     onSubmit={handleSubmit}
                 >
-                    <div>
+                    <div className='login__container--field'>
                         <Input
                             label="Email:"
                             id="email"
@@ -71,11 +71,11 @@ const LoginPage = () => {
                             placeholder="Password goes here"
                             type="password"
                         />
-                    </div>
-                    <button
-                        className="login__form-button"
-                        type="submit">Log in</button>
 
+                        <button
+                            className="login__form-button"
+                            type="submit">Log in</button>
+                    </div>
                     {error && <div className="login__message">{JSON.stringify(error)}</div>}
                 </form>
 

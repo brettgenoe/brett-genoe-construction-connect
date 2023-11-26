@@ -8,12 +8,24 @@
     &__container {
         box-sizing: border-box;
         max-width: 100%;
-        margin: 0 5%;
+        margin: 2.5% 5%;
 
         @include desktop {
-            margin: 0 2.5%;
+            margin: 2.5% 7.5%;
         }
 
+        &--field {
+            min-width: 60vw;
+            width: 60vw;
+            display: flex;
+            flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
+
+            // @include tablet {
+            //     max-width: 40vw;
+            // }
+        }
     }
 
     &__form {
@@ -21,6 +33,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+
 
         &-header {
             @include label-links-buttons;
@@ -32,26 +46,37 @@
         //     // padding-top: 1.25rem;
         // }
 
-        &-input {
-            @include input-field;
-            box-sizing: border-box;
-            width: 50vw;
+        // &-input {
+        //     @include input-field;
+        //     box-sizing: border-box;
+        //     width: 60vw;
 
 
-            @include tablet {
-                min-width: 40vw;
-            }
+        //     @include tablet {
+        //         min-width: 40vw;
+        //     }
 
-            @include desktop {
-                min-width: 45vw
-            }
-        }
+        //     @include desktop {
+        //         min-width: 45vw
+        //     }
+        // }
 
         &-button {
             @include button {
-                width: 50vw;
-                height: 2.5rem;
+                // min-width: 60%;
+                height: 2.25rem;
+                // padding
                 margin: (2rem 0);
+
+                @include tablet {
+                    min-width: 20vw;
+                    align-self: flex-end;
+                }
+
+                @include desktop {
+                    min-width: 15vw;
+
+                }
             }
         }
 
@@ -62,6 +87,11 @@
         @include label-links-buttons {
             line-height: 1.5;
             padding-bottom: .5rem;
+            margin: 1rem 0;
+
+            @include tablet {
+                font-size: 1rem;
+            }
         }
 
 

@@ -5,14 +5,24 @@
 
 
 .home {
-    background-color: white;
+    background-color: rgb(254, 254, 254);
     padding: 5%;
     box-sizing: border-box;
+
+    @include tablet {
+        padding: 2.5% 5%;
+    }
+
 
     &__title {
         text-align: center;
 
         @include page-header;
+
+        @include tablet {
+            padding-bottom: .5rem;
+        }
+
 
         &--search {
             @include tablet {
