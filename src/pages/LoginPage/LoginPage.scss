@@ -1,0 +1,80 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/reset.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
+.login {
+    &__container {
+        box-sizing: border-box;
+        max-width: 100%;
+        margin: 2.5% 5%;
+
+        @include desktop {
+            margin: 2.5% 7.5%;
+        }
+
+        &--field {
+            min-width: 60vw;
+            width: 60vw;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+
+        &-header {
+            @include label-links-buttons;
+            padding: (1.5rem 0 0.25rem 0);
+            display: block;
+        }
+
+        &-button {
+            @include button {
+                // min-width: 60%;
+                height: 2.25rem;
+                // padding
+                margin: (2rem 0);
+
+                @include tablet {
+                    min-width: 20vw;
+                    align-self: flex-end;
+                }
+
+                @include desktop {
+                    min-width: 15vw;
+
+                }
+            }
+        }
+    }
+
+    &__message {
+        @include label-links-buttons {
+            line-height: 1.5;
+            padding-bottom: .5rem;
+            margin: 1rem 0;
+
+            @include tablet {
+                font-size: 1rem;
+            }
+        }
+
+        &--link {
+            text-decoration: underline;
+            text-decoration-color: $hover-colour;
+            text-decoration-thickness: 2px;
+
+            &:hover {
+                opacity: 70%;
+            }
+        }
+    }
+}

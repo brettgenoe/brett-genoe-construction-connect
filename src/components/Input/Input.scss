@@ -1,0 +1,27 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
+.field {
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        @include label-links-buttons;
+        padding: (1.5rem 0 0.25rem 0);
+    }
+
+    &__input {
+        @include input-field;
+        min-width: 100%;
+
+        @include tablet {
+            min-width: 40vw;
+        }
+
+        @include desktop {
+            min-width: 45vw
+        }
+    }
+}

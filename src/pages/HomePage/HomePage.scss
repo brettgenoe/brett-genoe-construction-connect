@@ -1,0 +1,83 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/reset.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
+.home {
+    background-color: white;
+    padding: 5%;
+    box-sizing: border-box;
+
+    @include tablet {
+        padding: 2.5% 5%;
+    }
+
+    &__title {
+        text-align: center;
+
+        @include page-header;
+
+        @include tablet {
+            padding-bottom: .5rem;
+        }
+
+        &--search {
+            @include tablet {
+                padding-left: 5%;
+            }
+        }
+    }
+
+    &__map--containers {
+        position: relative;
+    }
+
+    &__search--map {
+        @include tablet {
+            width: 50vw;
+        }
+    }
+
+    &__media-queries {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.search {
+    height: 3rem;
+    display: flex;
+    gap: 5%;
+    padding-top: 1rem;
+
+    &__input {
+        height: 2rem;
+        width: 60%;
+        box-sizing: border-box;
+        border: 3px solid $border-colour;
+        background-color: $primary-background-colour;
+        border-radius: 1rem;
+        padding-left: 1rem;
+    }
+
+    &__button {
+        height: 1.75rem;
+        width: 3rem;
+        box-sizing: border-box;
+        background-color: $primary-colour;
+        border: 3px solid $hover-colour;
+        background-image: url("../../assets/icons/search.svg");
+        background-repeat: no-repeat;
+        background-size: 1rem;
+        background-position: (.9rem 0.2rem);
+        border-radius: 2rem;
+
+        &:hover {
+            background-color: $hover-colour;
+            color: $primary-colour;
+            border: 3px solid $primary-colour;
+            cursor: pointer;
+        }
+    }
+}

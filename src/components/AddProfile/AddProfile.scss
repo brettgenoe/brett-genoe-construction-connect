@@ -1,0 +1,62 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.signup {
+
+    &__message {
+        @include label-links-buttons {
+            line-height: 1.5;
+            padding-bottom: .5rem;
+            margin: 1rem 0;
+
+            @include tablet {
+                font-size: 1rem;
+            }
+        }
+
+        &--link {
+            text-decoration: underline;
+            text-decoration-color: $hover-colour;
+            text-decoration-thickness: 2px;
+
+            &:hover {
+                opacity: 70%;
+            }
+        }
+
+    }
+
+    &__container {
+        box-sizing: border-box;
+        max-width: 100%;
+        margin: 0 5%;
+
+        @include tablet {
+            margin: 2.5% 7.5%;
+        }
+
+        @include desktop {
+            margin: 2% 10%;
+        }
+
+    }
+
+    &-button {
+        @include button {
+            width: 100%;
+            margin: (2.5rem 0);
+            height: 2.5rem;
+
+            @include tablet {
+                width: 40vw;
+                margin-left: 0%;
+            }
+
+            @include desktop {
+                width: 20vw;
+
+            }
+        }
+    }
+}

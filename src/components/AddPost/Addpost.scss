@@ -1,0 +1,81 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
+.add-new {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        padding-top: 1rem;
+    }
+
+
+    &__container {
+        box-sizing: border-box;
+        max-width: 100%;
+        margin: 0 5%;
+
+        @include desktop {
+            margin: 0 2.5%;
+        }
+    }
+
+    &__form {
+
+        &--container {
+
+            @include tablet {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        &-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-right {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-button {
+            @include button {
+                width: 100%;
+                margin: (2rem 0);
+
+                @include tablet {
+                    width: 20%;
+                    margin-left: 80%;
+                }
+
+                @include desktop {
+                    width: 15%;
+                    margin-left: 85%;
+                }
+            }
+        }
+
+    }
+
+    .description {
+        height: 12rem;
+        box-sizing: border-box;
+        padding-bottom: 9rem;
+        width: 100%;
+
+        @include tablet {
+            height: 15rem;
+            padding-bottom: 12rem;
+        }
+
+    }
+
+
+
+
+
+}

@@ -1,0 +1,50 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/reset.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
+.footer {
+    background-color: $primary-background-colour;
+    border-top: 4px solid $hover-colour;
+    padding: (1rem 2.5% 0rem 2.5%);
+    box-sizing: border-box;
+
+    @include tablet {
+        padding: 1rem 5% 0 5%;
+    }
+
+    &__title {
+        font-size: 1.125rem;
+
+
+        &--contact {
+            font-size: 1.125rem;
+            text-transform: uppercase;
+            margin: (.5rem 0);
+            border-bottom: 2px $hover-colour solid;
+            width: fit-content;
+        }
+    }
+
+    &__contact-section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__icons {
+        display: flex;
+        position: relative;
+        top: -1rem;
+
+        &--linkedin {
+            height: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        &--github {
+            height: 2.5rem;
+        }
+    }
+
+}
