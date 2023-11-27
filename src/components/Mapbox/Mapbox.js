@@ -4,9 +4,6 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 import MapPopup from "../MapPopup/MapPopup"
 import axios from "axios";
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
-// mapboxgl.accessToken = process.env.REACT_APP_ACCESS_TOKEN;
-
-// mapboxgl.accessToken = "pk.eyJ1IjoiYnJldHRnZW5vZSIsImEiOiJjbHA0ZXJxdnEwY2MxMm1xbDhjNnZpaWV5In0.p_muFdhbA9U0a96AlWixDQ";
 
 const Mapbox = () => {
     const mapContainer = useRef(null);
@@ -24,11 +21,8 @@ const Mapbox = () => {
         const fetchData = async () => {
             try {
 
-                // const response = await axios.get("http://localhost:8080/api/projects");
                 const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/projects`);
                 const projects = response.data;
-                console.log(response.data)
-
 
                 const newGeojsonData = {
                     type: "FeatureCollection",
@@ -66,7 +60,6 @@ const Mapbox = () => {
                     })),
                 };
 
-
                 setGeojsonData(newGeojsonData);
                 setLoading(false)
             } catch (error) {
@@ -75,7 +68,6 @@ const Mapbox = () => {
                 setLoading(false);
             }
         };
-
         fetchData();
     }, []);
 
