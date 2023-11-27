@@ -1,11 +1,7 @@
 import './MapPopup.scss'
 import React from 'react';
 
-
-
-
 const MapPopup = ({ feature, address }) => {
-    // console.log('MapPopup component called with feature:', feature);
     if (!feature) {
         return null;
     }

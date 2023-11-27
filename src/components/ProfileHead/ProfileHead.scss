@@ -3,14 +3,15 @@
 @use "../../styles/partials/reset.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 
+
+//  this will be used in sprint two
 .profile-head {
     &__container {
         display: flex;
-
     }
 
     &__title {
         @include subheader;
-
     }
+
 }

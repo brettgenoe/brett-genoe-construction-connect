@@ -1,6 +1,5 @@
 import AddPost from "../../components/AddPost/AddPost"
 
-
 const AddPostPage = () => {
     return (
         <>

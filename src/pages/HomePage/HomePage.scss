@@ -5,14 +5,13 @@
 
 
 .home {
-    background-color: rgb(254, 254, 254);
+    background-color: white;
     padding: 5%;
     box-sizing: border-box;
 
     @include tablet {
         padding: 2.5% 5%;
     }
-
 
     &__title {
         text-align: center;
@@ -23,7 +22,6 @@
             padding-bottom: .5rem;
         }
 
-
         &--search {
             @include tablet {
                 padding-left: 5%;
@@ -33,24 +31,17 @@
 
     &__map--containers {
         position: relative;
-        // width: 90vw;
-        // height: 90vw;
     }
 
     &__search--map {
         @include tablet {
             width: 50vw;
-            // height: 20vw;
         }
     }
 
     &__media-queries {
         display: flex;
         flex-direction: column;
-
-        @include tablet {
-            // flex-direction: row-reverse;
-        }
     }
 }
 

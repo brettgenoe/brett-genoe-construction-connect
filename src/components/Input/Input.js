@@ -1,5 +1,5 @@
 import "./Input.scss";
-import { useAuth } from "../AuthContext/AuthContext";
+// import { useAuth } from "../AuthContext/AuthContext";
 
 function Input({ label, id, placeholder, name, type, value, className, onChange }) {
     return (

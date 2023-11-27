@@ -79,6 +79,7 @@
         @include label-links-buttons;
         font-size: 1.25rem;
         line-height: 1.5;
+        padding-top: .5rem;
     }
 
     &__link {
@@ -86,5 +87,8 @@
         text-decoration-color: $hover-colour ;
         text-decoration-thickness: 2px;
     }
+}
 
+.mapboxgl-ctrl-attrib-button {
+    display: none;
 }

@@ -1,6 +1,4 @@
 import './HomePage.scss'
-import search from "../../assets/icons/search.svg"
-import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../components/AuthContext/AuthContext'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -11,20 +9,6 @@ const HomePage = () => {
     const { loggedIn, logOut } = useAuth();
     const authToken = sessionStorage.getItem('token');
     const [userFirstName, setUserFirstName] = useState('');
-
-    // useEffect(() => {
-
-    //     if (loggedIn) {
-
-    //         axios.get('http://localhost:8080/api/users/current', {
-    //             headers: {
-    //                 Authorization: `Bearer ${authToken}`
-    //             }
-    //         })
-    //             .then(response => setUserFirstName(response.data.first_name))
-    //             .catch(error => console.error('Error fetching current user info:', error));
-    //     }
-    // }, [loggedIn]);
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -70,7 +54,6 @@ const HomePage = () => {
                         </article> </section>
 
                 </div>
-
 
             </main>
         </>

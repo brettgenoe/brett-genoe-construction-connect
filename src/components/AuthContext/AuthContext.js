@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
             }
             console.log('sending request with token', token)
 
-            const response = await axios.get('http://localhost:8080/api/users/current', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/users/current`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
