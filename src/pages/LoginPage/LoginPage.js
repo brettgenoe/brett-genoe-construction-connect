@@ -1,4 +1,3 @@
-
 import './LoginPage.scss'
 import axios from 'axios';
 import { useState } from 'react';
@@ -11,13 +10,11 @@ const LoginPage = () => {
     const [error, setError] = useState("");
     const navigate = useNavigate();
     const auth = useAuth();
-    // const [loggedIn, setLoggedIn] = useState(false)
-
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.post("http://localhost:8080/api/users/login", {
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/users/login`, {
             email: event.target.email.value,
             password: event.target.password.value
         })
@@ -25,32 +22,23 @@ const LoginPage = () => {
                 sessionStorage.setItem("token", response.data.token);
 
                 try {
-                    const userResponse = await axios.get("http://localhost:8080/api/users/current", {
+                    const userResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/users/current`, {
                         headers: {
                             Authorization: `Bearer ${response.data.token}`
                         }
                     });
-
-                    console.log("Attempting to log in in loginpage");
-
-                    // setLoggedIn(true);
                     auth.logIn();
                     navigate('/');
 
-                    console.log("Welcome, " + userResponse.data.first_name);
                 } catch (error) {
                     console.error("Error fetching user information", error);
-                    // setLoggedIn(false);
                 }
             })
             .catch((error) => {
                 const errorMessage = error.response?.data?.message || "Please enter valid email and corresponding password.";
                 setError(errorMessage);
-                // setLoggedIn(false);
             });
     };
-
-
 
     return (
         <>

@@ -1,30 +1,29 @@
 import axios from "axios";
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Input from "../Input/Input.js"
 import { useAuth } from '../AuthContext/AuthContext';
 import "./AddPost.scss";
 
-// mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
-mapboxgl.accessToken = "pk.eyJ1IjoiYnJldHRnZW5vZSIsImEiOiJjbHA0ZXJxdnEwY2MxMm1xbDhjNnZpaWV5In0.p_muFdhbA9U0a96AlWixDQ";
+
+
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+// mapboxgl.accessToken = "pk.eyJ1IjoiYnJldHRnZW5vZSIsImEiOiJjbHA0ZXJxdnEwY2MxMm1xbDhjNnZpaWV5In0.p_muFdhbA9U0a96AlWixDQ";
+
 
 const AddPost = () => {
     const authContext = useAuth();
     const currentUser = authContext.currentUser;
-    // const [showDescriptions, setShowDescriptions] = useState({
-    //     carpenters: 0,
-    //     electricians: 0,
-    //     plumbers: 0,
-    //     operators: 0,
-    //     safety: 0,
-    //     labours: 0,
-    // });
+    const navigate = useNavigate();
+    const managerId = currentUser && currentUser.user_id ? currentUser.user_id : null;
+
 
     const [formData, setFormData] = useState({
         company_name: "",
         email: "",
         telephone: "",
-        manager_id: currentUser ? currentUser.user_id : "",
+        manager_id: managerId,
         duration: "",
         description: "",
         carpenters_needed: "",
@@ -74,13 +73,6 @@ const AddPost = () => {
                 console.error('Error fetching coordinates from Mapbox Geocoding API:', error);
             }
         }
-        // else if (e.target.name.endsWith("_needed")) {
-        //     const trade = e.target.name.replace("_needed", "");
-        //     setShowDescriptions((prevState) => ({
-        //         ...prevState,
-        //         [trade]: +e.target.value, // Use + to convert to a number
-        //     }));
-        // } 
         else {
 
             setFormData({
@@ -93,13 +85,11 @@ const AddPost = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData)
         try {
-            const response = await axios.post("http://localhost:8080/api/projects", formData);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/projects`, formData);
             console.log("Project created:", response.data);
-
-            console.log(formData)
             setNewProject(response.data);
+            navigate("/")
         } catch (error) {
             console.error("Error creating project:", error);
         }
@@ -125,7 +115,7 @@ const AddPost = () => {
                                 label="Company Name"
                                 placeholder="Company Name"
                                 name="company_name"
-                                type="number"
+                                type="text"
                                 value={formData.company_name}
                                 onChange={handleChange}
                             />
@@ -161,7 +151,7 @@ const AddPost = () => {
                                 label="Duration"
                                 placeholder="Duration of project in months"
                                 name="duration"
-                                type="text"
+                                type="number"
                                 value={formData.duration}
                                 onChange={handleChange}
                             />

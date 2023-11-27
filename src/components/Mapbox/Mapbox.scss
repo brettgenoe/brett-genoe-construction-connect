@@ -3,8 +3,6 @@
 @use "../../styles/partials/reset.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 
-
-
 .map {
 
     &-section {
@@ -18,7 +16,6 @@
 
         @include tablet {
             max-width: 45vw;
-            // max-height: 50vw;
         }
     }
 
@@ -34,13 +31,18 @@
             min-height: 60vw;
             max-height: 60vw;
         }
+
+        @include desktop {
+            max-width: 50vw;
+            min-height: 40vw;
+            max-height: 40vw;
+        }
     }
 
     &__flex-container {
         @include tablet {
             display: flex;
             width: 90vw;
-
             gap: 5%;
         }
     }

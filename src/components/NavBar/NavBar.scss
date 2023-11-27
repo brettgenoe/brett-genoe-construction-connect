@@ -4,8 +4,6 @@
 @use "../../styles/partials/mixins.scss" as *;
 
 .nav {
-
-
     &__section {
         box-sizing: border-box;
         width: 100%;
@@ -13,8 +11,6 @@
         box-sizing: border-box;
         padding: 1rem 2.5%;
         border-bottom: 4px solid $hover-colour;
-
-
     }
 
     &__top-bar {
@@ -55,9 +51,5 @@
         @include page-header;
         box-sizing: border-box;
         text-align: center;
-
-        // @include tablet {
-        //     padding-bottom: 2rem;
-        // }
     }
 }

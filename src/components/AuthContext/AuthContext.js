@@ -8,27 +8,23 @@ export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null)
     const token = sessionStorage.getItem('token')
 
-
     const fetchUserData = async () => {
         try {
             if (!token) {
                 throw new Error('No authentication token found');
             }
-            console.log('sending request with token', token)
 
-            const response = await axios.get('http://localhost:8080/api/users/current', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/users/current`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
 
             const userData = response.data;
-            console.log(response.data)
             setCurrentUser(userData);
             setLoggedIn(true);
 
         } catch (error) {
-            console.log(token)
             console.error('Error fetching user data on authContext:', error);
             setCurrentUser(null);
             setLoggedIn(false);
@@ -38,9 +34,7 @@ export const AuthProvider = ({ children }) => {
     const logIn = async () => {
         try {
             sessionStorage.setItem('authToken', 'exampleAuthToken');
-
             const userData = await fetchUserData();
-
             setCurrentUser(userData);
             setLoggedIn(true);
         } catch (error) {
@@ -52,7 +46,6 @@ export const AuthProvider = ({ children }) => {
     const logOut = () => {
 
         sessionStorage.removeItem('authToken');
-
         setCurrentUser(null);
         setLoggedIn(false);
     };
@@ -60,7 +53,6 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         fetchUserData();
     }, []);
-
 
     const value = {
         currentUser,

@@ -1,29 +1,11 @@
 import { useAuth } from '../../components/AuthContext/AuthContext'
-import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import axios from 'axios';
 import logo from "../../assets/images/logo.png";
 import './NavBar.scss';
 
 const NavBar = () => {
     const { loggedIn, logOut } = useAuth();
-    console.log('NavBar - loggedIn:', loggedIn);
-    // const authToken = sessionStorage.getItem('token');
-    // const [userFirstName, setUserFirstName] = useState('');
 
-    // useEffect(() => {
-
-    //     if (loggedIn) {
-
-    //         axios.get('http://localhost:8080/api/users/current', {
-    //             headers: {
-    //                 Authorization: `Bearer ${authToken}`
-    //             }
-    //         })
-    //             .then(response => setUserFirstName(response.data.first_name))
-    //             .catch(error => console.error('Error fetching current user info:', error));
-    //     }
-    // }, [loggedIn]);
     return (
         <>
             <header className='nav__section' >
@@ -55,10 +37,7 @@ const NavBar = () => {
                                 </NavLink>
                             </>
                         )}
-
                     </div>
-
-
                 </nav>
                 <h1 className='nav__title' >Construction Connect</h1>
             </header>

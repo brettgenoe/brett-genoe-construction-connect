@@ -3,9 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import MapPopup from "../MapPopup/MapPopup"
 import axios from "axios";
-// mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
-
-mapboxgl.accessToken = "pk.eyJ1IjoiYnJldHRnZW5vZSIsImEiOiJjbHA0ZXJxdnEwY2MxMm1xbDhjNnZpaWV5In0.p_muFdhbA9U0a96AlWixDQ";
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 const Mapbox = () => {
     const mapContainer = useRef(null);
@@ -23,10 +21,8 @@ const Mapbox = () => {
         const fetchData = async () => {
             try {
 
-                const response = await axios.get("http://localhost:8080/api/projects");
+                const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/projects`);
                 const projects = response.data;
-                // console.log(response.data)
-
 
                 const newGeojsonData = {
                     type: "FeatureCollection",
@@ -64,7 +60,6 @@ const Mapbox = () => {
                     })),
                 };
 
-
                 setGeojsonData(newGeojsonData);
                 setLoading(false)
             } catch (error) {
@@ -73,7 +68,6 @@ const Mapbox = () => {
                 setLoading(false);
             }
         };
-
         fetchData();
     }, []);
 
@@ -104,8 +98,6 @@ const Mapbox = () => {
                             },
                         });
                     });
-
-
                     const handleEvent = async (event) => {
                         if (event.type === 'move') {
                             setLng(map.current.getCenter().lng.toFixed(4));
@@ -122,12 +114,10 @@ const Mapbox = () => {
                                     );
                                     const address = response.data.features[0].place_name;
                                     setAddress(address)
-                                    console.log('Reverse Geocoding Result:', address);
                                 } catch (error) {
                                     console.error('Reverse Geocoding Error:', error);
                                 }
                             } else {
-                                console.log('No features clicked');
                                 setSelectedFeature(null);
                             }
                         }

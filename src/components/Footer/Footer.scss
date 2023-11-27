@@ -7,11 +7,11 @@
 .footer {
     background-color: $primary-background-colour;
     border-top: 4px solid $hover-colour;
-    padding: (.75rem 2.5% 0rem 2.5%);
+    padding: (1rem 2.5% 0rem 2.5%);
     box-sizing: border-box;
 
     @include tablet {
-        padding: 1rem 5%;
+        padding: 1rem 5% 0 5%;
     }
 
     &__title {
@@ -36,8 +36,6 @@
         display: flex;
         position: relative;
         top: -1rem;
-
-
 
         &--linkedin {
             height: 2.5rem;
