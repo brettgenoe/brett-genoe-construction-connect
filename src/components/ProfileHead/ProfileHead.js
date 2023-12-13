@@ -1,6 +1,6 @@
 import './ProfileHead.scss'
 
-{/* this will be used in sprint two */ }
+
 const ProfileHead = () => {
 
     return (
@@ -15,4 +15,3 @@ const ProfileHead = () => {
 
 export default ProfileHead;
 
-{/* this will be used in sprint two */ }
