@@ -8,6 +8,7 @@
 * {
   font-family: Avenir, Helvetica, sans-serif;
   color: $primary-text;
+  
 }
 
 ::placeholder {
@@ -22,4 +23,5 @@
 
 .content-container {
   flex-grow: 1;
+  background-color: $primary-background-colour;
 }

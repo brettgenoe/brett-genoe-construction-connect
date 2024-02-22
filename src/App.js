@@ -25,9 +25,6 @@ function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/post" element={<AddPostPage />} />
                 <Route path="/editprofile" element={<EditProfile />} />
-
-              
-
               </Routes>
             </div>
             <Footer />

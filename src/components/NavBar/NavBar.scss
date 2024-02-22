@@ -7,10 +7,12 @@
     &__section {
         box-sizing: border-box;
         width: 100%;
-        background-color: $primary-background-colour;
+        // background-color: $primary-background-colour;
+        background-color: $secondary-background-colour;
+        // color: beige;
         box-sizing: border-box;
         padding: 1rem 2.5%;
-        border-bottom: 4px solid $hover-colour;
+        // border-bottom: 4px solid $hover-colour;
     }
 
     &__top-bar {
@@ -49,6 +51,7 @@
 
     &__title {
         @include page-header;
+        color: $secondary-text;
         box-sizing: border-box;
         text-align: center;
     }

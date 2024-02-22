@@ -132,8 +132,8 @@
 @mixin button {
     padding: 0.25rem .5rem;
     min-width: 7rem;
-    background-color: $primary-colour ;
-    border: 3px solid $hover-colour;
+    background-color: $button-colour;
+    border: 3px solid $border-colour;
     border-radius: 2.5rem;
     // max-height: 2rem;
 
