@@ -8,11 +8,14 @@
         box-sizing: border-box;
         width: 100%;
         // background-color: $primary-background-colour;
-        background-color: $secondary-background-colour;
+        // background-color: $secondary-background-colour;
+        background: linear-gradient(140deg, $secondary-background-colour 90%, $primary-colour 90%);
+        // background: linear-gradient(to left bottom, $secondary-background-colour 70%, $primary-colour 30%);
         // color: beige;
         box-sizing: border-box;
         padding: 1rem 2.5%;
         // border-bottom: 4px solid $hover-colour;
+        border-bottom: inset 5px $border-colour;
     }
 
     &__top-bar {
@@ -42,6 +45,8 @@
     &__button {
         @include button {
             height: 2rem;
+            box-shadow: 2px 2px 2px $hover-colour;
+            transition: 200ms ease-in;
 
             @include tablet {
                 height: 2.5rem;

@@ -151,6 +151,7 @@
         color: $primary-colour;
         border: 3px solid $primary-colour;
         cursor: pointer;
+        transition: 200ms ease-in
     }
 
     @content;
