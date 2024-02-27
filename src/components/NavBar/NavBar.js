@@ -10,13 +10,18 @@ const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navMenuRef = useRef(null);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen)
+    const toggleMenu = (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+        setIsMenuOpen(prevState => !prevState)
     }
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (navMenuRef.current && !navMenuRef.current.contains(event.target)) {
+            if (navMenuRef.current 
+                && !navMenuRef.current.contains(event.target)
+                && !event.target.classList.contains("hamburger")
+                ) {
                 setIsMenuOpen(false);
             }
         };
@@ -86,7 +91,9 @@ const NavBar = () => {
                         )}
                     </div>
 
-                    <div className='hamburger' onClick={toggleMenu}>
+                    <div 
+                    className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+                    onClick={(event) => toggleMenu(event)}>
                         <span className='bar'></span>
                         <span className='bar'></span>
                         <span className='bar'></span>

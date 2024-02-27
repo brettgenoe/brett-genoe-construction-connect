@@ -103,11 +103,18 @@
 }
 
 .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(.675rem) rotate(45deg);
+    @include tablet {
+        transform: translateY(.85rem) rotate(45deg);
+    }
 }
 
 .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-.675rem) rotate(-45deg);
+
+    @include tablet {
+        transform: translateY(-.85rem) rotate(-45deg);
+    }
 }
 
 
