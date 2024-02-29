@@ -5,10 +5,11 @@
 
 
 .footer {
-    background-color: $primary-background-colour;
-    border-top: 4px solid $hover-colour;
+    background-color: $secondary-background-colour;
+    border-top: 4px solid $button-colour ;
     padding: (1rem 2.5% 0rem 2.5%);
     box-sizing: border-box;
+    color: $secondary-text;
 
     @include tablet {
         padding: 1rem 5% 0 5%;
@@ -16,35 +17,59 @@
 
     &__title {
         font-size: 1.125rem;
+        color: $secondary-text;
 
 
         &--contact {
             font-size: 1.125rem;
             text-transform: uppercase;
             margin: (.5rem 0);
-            border-bottom: 2px $hover-colour solid;
+            border-bottom: 2px $button-colour solid;
             width: fit-content;
+            color: $secondary-text;
         }
     }
 
     &__contact-section {
         display: flex;
         justify-content: space-between;
+        color: $secondary-text;
     }
 
     &__icons {
         display: flex;
         position: relative;
         top: -1rem;
+        transition: ease-in 300ms;
 
+        
         &--linkedin {
             height: 2.5rem;
-            padding-left: 2rem;
+            margin-left: 2rem;
+            transition: ease-in 300ms;
+            border-radius: .25rem;
+            &:hover {
+                scale: 1.15;
+                transition: ease-in 300ms;
+                box-shadow: 3px 3px 15px $button-colour;
+
+            }
         }
 
         &--github {
             height: 2.5rem;
+            transition: ease-in 300ms;
+            border-radius: 50%;
+            &:hover {
+                scale: 1.15;
+                transition: ease-in 300ms;
+                box-shadow: 3px 3px 15px $button-colour;
+            }
         }
+    }
+
+    &__email {
+        color: $secondary-text;
     }
 
 }

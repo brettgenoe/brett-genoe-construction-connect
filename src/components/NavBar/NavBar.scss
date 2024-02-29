@@ -7,30 +7,32 @@
     &__section {
         box-sizing: border-box;
         width: 100%;
-        background-color: $primary-background-colour;
+        background: linear-gradient(140deg, $secondary-background-colour 90%, $primary-colour 90%);
         box-sizing: border-box;
         padding: 1rem 2.5%;
-        border-bottom: 4px solid $hover-colour;
+        border-bottom: solid 5px $button-colour;
     }
 
     &__top-bar {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__log-in {
+        display: none;
+        @include desktop {
         display: flex;
-        width: 100%;
         box-sizing: border-box;
         justify-content: flex-end;
         gap: 1rem;
 
-        @include tablet {
-            padding-bottom: 1rem;
         }
     }
 
     &__logo {
         height: 2.5rem;
+        box-shadow:4px 2px 6px $button-colour;
 
         @include tablet {
             height: 3rem;
@@ -40,16 +42,125 @@
     &__button {
         @include button {
             height: 2rem;
+            box-shadow: 2px 2px 2px $hover-colour;
+            transition: 200ms ease-in;
 
             @include tablet {
                 height: 2.5rem;
+            }
+            
+            &--hamburger {
+                width: 10rem;
+                height: 3rem;
+                
+                @include tablet {
+                    height: 2.25rem;
+                    width: 8rem;
+                }
+                
             }
         }
     }
 
     &__title {
         @include page-header;
+        color: $secondary-text;
         box-sizing: border-box;
         text-align: center;
+        text-shadow: 2px 2px 6px $primary-text;
+
     }
+
+    &__menu {
+        display: flex;
+        box-sizing: border-box;
+        align-items: center;
+        position: fixed;
+        left: -100%;
+        top: 1rem;
+        min-height: 10rem;
+        background-color: $primary-background-colour;
+        border-radius: 10px;
+        z-index: 10;
+        text-align: center;
+        transition: 0.3s;
+        
+        box-shadow:0 10px 27px $hover-colour;
+
+            &--flex-container {
+                display: flex;
+                box-sizing: border-box;
+                flex-direction: column;
+                gap: 1.25rem;
+                padding: 2rem;
+
+                @include tablet {
+                    gap: 1rem;
+                }
+            }
+
+    }
+}
+.nav__menu.active {
+    left: 60%;
+
+    @include tablet {
+        left: 65%;
+    }
+
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+    
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(.675rem) rotate(45deg);
+    @include tablet {
+        transform: translateY(.85rem) rotate(45deg);
+    }
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-.675rem) rotate(-45deg);
+
+    @include tablet {
+        transform: translateY(-.85rem) rotate(-45deg);
+    }
+}
+
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    justify-content: space-between;
+    cursor: pointer;
+    
+   @include tablet {
+    gap: .335rem;
+   }
+
+    @include desktop {
+        display: none;
+    }
+}
+
+.bar {
+display: block;
+width: 2.25rem;
+border: 2px solid $button-colour;
+border-radius: 1rem;
+background-color: $border-colour;
+box-shadow: 2px 2px 2px $button-colour;
+height: .25rem;
+-webkit-transition: all 0.35s ease-in-out;
+transition: all 0.35s ease-in-out;
+
+
+@include tablet {
+        width: 2.75rem;
+        height: .35rem;
+}
 }
