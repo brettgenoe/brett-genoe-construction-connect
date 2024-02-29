@@ -6,7 +6,7 @@
 
 .footer {
     background-color: $secondary-background-colour;
-    border-top: 4px solid $border-colour;
+    border-top: 4px solid $button-colour ;
     padding: (1rem 2.5% 0rem 2.5%);
     box-sizing: border-box;
     color: $secondary-text;
@@ -24,7 +24,7 @@
             font-size: 1.125rem;
             text-transform: uppercase;
             margin: (.5rem 0);
-            border-bottom: 2px $border-colour solid;
+            border-bottom: 2px $button-colour solid;
             width: fit-content;
             color: $secondary-text;
         }
@@ -40,15 +40,36 @@
         display: flex;
         position: relative;
         top: -1rem;
+        transition: ease-in 300ms;
 
+        
         &--linkedin {
             height: 2.5rem;
-            padding-left: 2rem;
+            margin-left: 2rem;
+            transition: ease-in 300ms;
+            border-radius: .25rem;
+            &:hover {
+                scale: 1.15;
+                transition: ease-in 300ms;
+                box-shadow: 3px 3px 15px $button-colour;
+
+            }
         }
 
         &--github {
             height: 2.5rem;
+            transition: ease-in 300ms;
+            border-radius: 50%;
+            &:hover {
+                scale: 1.15;
+                transition: ease-in 300ms;
+                box-shadow: 3px 3px 15px $button-colour;
+            }
         }
+    }
+
+    &__email {
+        color: $secondary-text;
     }
 
 }

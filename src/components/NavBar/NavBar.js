@@ -12,9 +12,10 @@ const NavBar = () => {
 
     const toggleMenu = (event) => {
         event.stopPropagation();
-        event.preventDefault();
+        
         setIsMenuOpen(prevState => !prevState)
     }
+    // const hamburger = document.querySelector(".hamburger");
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -36,7 +37,7 @@ const NavBar = () => {
     };
 
     return (
-        <>
+        <section>
             <header className='nav__section' >
                 <nav className='nav__top-bar'>
 
@@ -67,10 +68,20 @@ const NavBar = () => {
                             </>
                         )}
                     </div>
-                    <div ref={navMenuRef} className={`nav__menu ${isMenuOpen ? 'active' : ''}`}>
+
+                        <div
+                        ref={navMenuRef}
+                        className={`nav__menu ${isMenuOpen ? 'active' : ''}`}>
+                        <div
+                        className='nav__menu--flex-container'
+                          >
+                        <NavLink to="/">
+                                    <button className='nav__button' onClick={handleLinkClick}>Home</button>
+                                </NavLink>
                         {loggedIn ? (
                             <>
-                                <NavLink to="./post">
+                                <NavLink 
+                                to="./post">
                                     <button className='nav__button' onClick={handleLinkClick}>New Post!</button>
                                 </NavLink>
                                 <button className='nav__button' onClick={() => {
@@ -90,10 +101,12 @@ const NavBar = () => {
                             </>
                         )}
                     </div>
+                    </div>
 
                     <div 
-                    className={`hamburger ${isMenuOpen ? 'active' : ''}`}
-                    onClick={(event) => toggleMenu(event)}>
+                    ref={navMenuRef}
+                    onClick={(event) => toggleMenu(event)}
+                    className={`hamburger ${isMenuOpen ? 'active' : ''}`}>
                         <span className='bar'></span>
                         <span className='bar'></span>
                         <span className='bar'></span>
@@ -101,7 +114,7 @@ const NavBar = () => {
                 </nav>
                 
             </header>
-        </>
+        </section>
     )
 }
 

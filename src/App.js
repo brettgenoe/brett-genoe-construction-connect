@@ -16,7 +16,10 @@ function App() {
     <>
       <AuthProvider>
         <BrowserRouter>
-          <div className="app-container">
+          <div 
+          // className={`app-container${isMenuOpen ? `active` : ``}`}
+          className="app-container"
+          >
             <NavBar />
             <div className="content-container">
               <Routes>
