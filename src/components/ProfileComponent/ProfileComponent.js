@@ -1,5 +1,5 @@
 import './ProfileComponent.scss'
-{/* this will be used in sprint two */ }
+
 const ProfileComponent = () => {
 
     return (
@@ -13,4 +13,3 @@ const ProfileComponent = () => {
 
 export default ProfileComponent;
 
-{/* this will be used in sprint two */ }
