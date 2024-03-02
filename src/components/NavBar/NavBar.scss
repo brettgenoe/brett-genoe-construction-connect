@@ -44,13 +44,16 @@
             height: 2rem;
             box-shadow: 2px 2px 2px $hover-colour;
             transition: 200ms ease-in;
+            min-width: 8rem;
 
             @include tablet {
                 height: 2.5rem;
             }
             
+            
             &--hamburger {
                 width: 10rem;
+                border-color: red;
                 height: 3rem;
                 
                 @include tablet {
@@ -157,7 +160,7 @@ box-shadow: 2px 2px 2px $button-colour;
 height: .25rem;
 -webkit-transition: all 0.35s ease-in-out;
 transition: all 0.35s ease-in-out;
-
+// transition: cubic-bezier(0.1139, 12.5111175, 0.565, 1);
 
 @include tablet {
         width: 2.75rem;
