@@ -93,8 +93,8 @@ const Mapbox = () => {
                             type: 'circle',
                             source: 'geojson-data',
                             paint: {
-                                'circle-radius': 8,
-                                'circle-color': '#CC958F',
+                                'circle-radius': 7.5,
+                                'circle-color': '#0f262b',
                             },
                         });
                     });

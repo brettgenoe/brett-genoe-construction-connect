@@ -6,7 +6,7 @@ import ProfileComponent from "../../components/ProfileComponent/ProfileComponent
 const AddPostPage = () => {
     const { loggedIn, logOut } = useAuth();
     const authToken = sessionStorage.getItem('token');
-    const [userData, setUserData] = useState([]);
+    const [userData, setUserData] = useState({});
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -31,7 +31,8 @@ const AddPostPage = () => {
     return (
         <>
             <h1>Edit your profile {userData.first_name}</h1>
-            <ProfileComponent />
+            <ProfileComponent
+            userData= {userData} />
         </>
     )
 }
