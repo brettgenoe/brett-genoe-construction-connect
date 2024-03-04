@@ -50,6 +50,10 @@ const NavBar = () => {
                     <div className='nav__log-in' >
                         {loggedIn ? (
                             <>
+                                    <NavLink 
+                                to="./editprofile">
+                                    <button className='nav__button' onClick={handleLinkClick}>Edit Profile</button>
+                                </NavLink>
                                 <NavLink to="./post">
                                     <button className='nav__button'>New Post!</button>
                                 </NavLink>
@@ -70,9 +74,10 @@ const NavBar = () => {
                     </div>
 
                         <div
-                        ref={navMenuRef}
+                        
                         className={`nav__menu ${isMenuOpen ? 'active' : ''}`}>
                         <div
+                        ref={navMenuRef}
                         className='nav__menu--flex-container'
                           >
                         <NavLink to="/">
@@ -80,6 +85,10 @@ const NavBar = () => {
                                 </NavLink>
                         {loggedIn ? (
                             <>
+                                <NavLink 
+                                to="./editprofile">
+                                    <button className='nav__button' onClick={handleLinkClick}>Edit Profile</button>
+                                </NavLink>
                                 <NavLink 
                                 to="./post">
                                     <button className='nav__button' onClick={handleLinkClick}>New Post!</button>
@@ -104,7 +113,7 @@ const NavBar = () => {
                     </div>
 
                     <div 
-                    ref={navMenuRef}
+                    // ref={navMenuRef}
                     onClick={(event) => toggleMenu(event)}
                     className={`hamburger ${isMenuOpen ? 'active' : ''}`}>
                         <span className='bar'></span>

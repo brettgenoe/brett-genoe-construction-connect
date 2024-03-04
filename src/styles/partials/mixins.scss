@@ -125,6 +125,15 @@
     border-radius: 2rem;
     padding: (0.5rem 0 .5rem .5rem);
     box-sizing: border-box;
+    transition: 200ms;
+
+    &:hover {
+        background-color: $hover-colour;
+        border-color: $secondary-background-colour;
+        transform: translateX(.1rem);
+        cursor: pointer;
+        transition: 200ms;
+    }
 
     @content;
 }
@@ -148,8 +157,8 @@
 
     &:hover {
         background-color: $hover-colour;
-        color: $primary-colour;
-        border: 3px solid $primary-colour;
+        color: $button-colour;
+        border: 3px solid $button-colour;
         cursor: pointer;
         transition: 200ms ease-in
     }

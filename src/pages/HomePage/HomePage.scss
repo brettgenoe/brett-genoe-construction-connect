@@ -55,28 +55,41 @@
         height: 2rem;
         width: 60%;
         box-sizing: border-box;
-        border: 3px solid $border-colour;
-        background-color: $primary-background-colour;
+        border: 3px solid $button-colour;
+        background-color: white;
         border-radius: 1rem;
         padding-left: 1rem;
+        box-shadow: 1px 1px 5px $button-colour;
+
+        &:hover {
+           
+            border: 3px solid $primary-text;
+            transition: 300ms;
+            transform:translateX(.1rem);
+            cursor: pointer;
+        }
+
     }
 
     &__button {
-        height: 1.75rem;
+        height: 2rem;
         width: 3rem;
         box-sizing: border-box;
         background-color: $primary-colour;
-        border: 3px solid $hover-colour;
+        border: 3px solid $button-colour;
         background-image: url("../../assets/icons/search.svg");
         background-repeat: no-repeat;
         background-size: 1rem;
-        background-position: (.9rem 0.2rem);
+        background-position: (.85rem 0.25rem);
         border-radius: 2rem;
+        box-shadow: 1px 1px 5px $button-colour;
 
         &:hover {
-            background-color: $hover-colour;
-            color: $primary-colour;
-            border: 3px solid $primary-colour;
+            // background-color: $hover-colour; 
+            // color: $primary-colour;
+            border: 3px solid $primary-text;
+            transition: 300ms;
+            transform:translateX(.1rem);
             cursor: pointer;
         }
     }

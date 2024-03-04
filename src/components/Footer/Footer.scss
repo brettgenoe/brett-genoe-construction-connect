@@ -48,10 +48,10 @@
             margin-left: 2rem;
             transition: ease-in 300ms;
             border-radius: .25rem;
+            box-shadow: 3px 3px 15px $button-colour;
             &:hover {
                 scale: 1.15;
                 transition: ease-in 300ms;
-                box-shadow: 3px 3px 15px $button-colour;
 
             }
         }
@@ -60,10 +60,10 @@
             height: 2.5rem;
             transition: ease-in 300ms;
             border-radius: 50%;
+            box-shadow: 3px 3px 15px $button-colour;
             &:hover {
                 scale: 1.15;
                 transition: ease-in 300ms;
-                box-shadow: 3px 3px 15px $button-colour;
             }
         }
     }
